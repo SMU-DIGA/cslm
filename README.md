@@ -27,3 +27,4 @@ As far as we can see, the differences of computer science for language models in
 2. Token as the basic operation. The basic operation for traditional computers are computation operation, while for LMs, the basic operation is token. 
 3. Buggy. With many-year efforts, we do not suffer in the system errors of traditional computers for solving and verifying, once programed correctly. However, LMs can hallucinate, i.e., make mistakes. We can not make sure that LMs always return the correct solutions even so-called correctly prompted. In this case, how to investigate this? 
 
+This can bring lots of different investigations.
