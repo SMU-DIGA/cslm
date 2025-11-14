@@ -2,6 +2,9 @@
 
 Let's build the computer science for language models. 
 
+---
+
+## LM as New Universal Computers
 
 Language model is becoming the new universal computer, which can solve
 even more problems than traditional computers. However, there is still
