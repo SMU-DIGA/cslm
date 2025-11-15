@@ -30,7 +30,20 @@ As far as we can see, the differences of computer science for language models in
 This can bring lots of different investigations.
 
 
+## Existing Work
+
 ### Benchmarking
 
 1. [NPHardEval: Dynamic Benchmark on Reasoning Ability of Large Language Models via Complexity Classes](https://arxiv.org/abs/2312.14890)
-2. [Nondeterministic Polynomial-time Problem Challenge: An Ever-Scaling Reasoning Benchmark for LLMs](https://arxiv.org/abs/2504.11239)
+2. [ZebraLogic: On the Scaling Limits of LLMs for Logical Reasoning](https://arxiv.org/abs/2502.01100)
+3. [Nondeterministic Polynomial-time Problem Challenge: An Ever-Scaling Reasoning Benchmark for LLMs](https://arxiv.org/abs/2504.11239)
+
+### Training
+
+1. [SATURN: SAT-based Reinforcement Learning to Unleash Language Model Reasoning](https://arxiv.org/abs/2505.16368)
+2. [NP-Engine: Empowering Optimization Reasoning in Large Language Models with Verifiable Synthetic NP Problems](https://www.arxiv.org/abs/2510.16476)
+
+
+### Theory
+
+So far, seems none.
