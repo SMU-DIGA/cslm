@@ -1,6 +1,6 @@
 # Computer Science for Language Models
 
-Let's build the computer science for language models. 
+Let's build the computer science for language models together. 
 
 ---
 
@@ -30,6 +30,7 @@ As far as we can see, the differences of computer science for language models in
 
 5. This can bring lots of different investigations.
 
+---
 
 ## Existing Work
 
