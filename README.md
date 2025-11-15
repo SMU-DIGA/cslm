@@ -33,6 +33,10 @@ As far as we can see, the differences of computer science for language models in
 
 ## Existing Work
 
+### Theory
+
+1. [Physics of Language Models](https://physics.allen-zhu.com/)
+
 ### Benchmarking
 
 1. [NPHardEval: Dynamic Benchmark on Reasoning Ability of Large Language Models via Complexity Classes](https://arxiv.org/abs/2312.14890)
@@ -43,8 +47,10 @@ As far as we can see, the differences of computer science for language models in
 
 1. [SATURN: SAT-based Reinforcement Learning to Unleash Language Model Reasoning](https://arxiv.org/abs/2505.16368)
 2. [NP-Engine: Empowering Optimization Reasoning in Large Language Models with Verifiable Synthetic NP Problems](https://www.arxiv.org/abs/2510.16476)
+3. [RLVE: Scaling Up Reinforcement Learning for Language Models with Adaptive Verifiable Environments](https://arxiv.org/abs/2511.07317)
 
 
-### Theory
+### Memory
 
-So far, seems none.
+1. [How much do language models memorize?](https://arxiv.org/abs/2505.24832)
+2. [The Landscape of Memorization in LLMs: Mechanisms, Measurement, and Mitigation](https://arxiv.org/abs/2507.05578)
