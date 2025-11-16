@@ -34,11 +34,30 @@ As far as we can see, the differences of computer science of language models inc
 3. **Buggy**. With many-year efforts, we do not suffer in the system errors of traditional computers for solving and verifying, once programed correctly. However, LMs can hallucinate, i.e., make mistakes. We can not make sure that LMs always return the correct solutions even so-called correctly prompted. In this case, how to investigate this? 
 4. **Multimodal**. Most traditional computers can only handle text and numerical. But multimodal LMs can handle audio, image/video and any modal of data. We can really build a universal theoretical understanding. 
 
-5. This can bring lots of different investigations.
+
+This can bring lots of different investigations.
 
 ---
 
-## Existing Work
+## Our Work
+
+### 1. Nondeterministic Polynomial-time Problem Challenge (NPPC)
+
+Our first work is [Nondeterministic Polynomial-time Problem Challenge: An Ever-Scaling Reasoning Benchmark for LLMs](https://arxiv.org/abs/2504.11239).
+
+Given that almost all benchmarks will be crushed in short time, i.e., higher than 90% accuracy within 1 year, and hacked, i.e., overfit to the current benchmarks. 
+In this work, we propose the **ever-scalingness**, where we believe that a good benchmark should be scaling over complexity, i.e., the difficulty of generated problems can be increased continuously, 
+instances, i.e., generating infinite instances to avoid overfitting, oversight, i.e., easy for verification even for very difficult problems, and coverage, i.e., be real-world relevant. 
+These four desiderata should be the golden criteria for a good benchmark. 
+
+Motivating by this, we propose NPPC, the first ever-scaling benchmark for LLMs. 
+
+### More to come
+
+
+---
+
+## Existing Other Related Work
 
 ### Theory
 
@@ -48,7 +67,6 @@ As far as we can see, the differences of computer science of language models inc
 
 1. [NPHardEval: Dynamic Benchmark on Reasoning Ability of Large Language Models via Complexity Classes](https://arxiv.org/abs/2312.14890)
 2. [ZebraLogic: On the Scaling Limits of LLMs for Logical Reasoning](https://arxiv.org/abs/2502.01100)
-3. [Nondeterministic Polynomial-time Problem Challenge: An Ever-Scaling Reasoning Benchmark for LLMs](https://arxiv.org/abs/2504.11239)
 
 ### Training
 
