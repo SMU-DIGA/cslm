@@ -38,7 +38,7 @@ As far as we can see, the differences of computer science of language models inc
 This would be a new direction for us to understand the intrinsic properties of problems and multimodal LMs. 
 Providing a universal perspective for us to design benchmarks, collect data, build model architectures and train the models.
 
-Welcome to THE new computer science!
+**Welcome to THE new computer science!**
 
 ---
 
