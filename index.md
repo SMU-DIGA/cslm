@@ -1,3 +1,9 @@
+---
+layout: default
+title: Home
+---
+
+
 # Computer Science for Language Models
 
 Let's build the computer science for language models together. 
