@@ -44,7 +44,6 @@ This can bring lots of different investigations.
 ### 1. Nondeterministic Polynomial-time Problem Challenge (NPPC)
 
 Our first work is [Nondeterministic Polynomial-time Problem Challenge: An Ever-Scaling Reasoning Benchmark for LLMs](https://arxiv.org/abs/2504.11239).
-
 Given that almost all benchmarks will be crushed in short time, i.e., higher than 90% accuracy within 1 year, and hacked, i.e., overfit to the current benchmarks. 
 In this work, we propose the **ever-scalingness**, where we believe that a good benchmark should be scaling over complexity, i.e., the difficulty of generated problems can be increased continuously, 
 instances, i.e., generating infinite instances to avoid overfitting, oversight, i.e., easy for verification even for very difficult problems, and coverage, i.e., be real-world relevant. 
