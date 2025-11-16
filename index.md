@@ -35,7 +35,8 @@ As far as we can see, the differences of computer science of language models inc
 4. **Multimodal**. Most traditional computers can only handle text and numerical. But multimodal LMs can handle audio, image/video and any modal of data. We can really build a universal theoretical understanding. 
 
 
-This can bring lots of different investigations.
+This would be a new direction for us to understand the intrinsic properties of problems and multimodal LMs.
+It is THE new computer science!
 
 ---
 
