@@ -14,7 +14,7 @@ Let's build the computer science of language models together.
 
 Language model is becoming the new universal computer, which can solve
 even more problems than traditional computers. However, there is still
-lacking the computer science for language models. 
+lacking the computer science of language models. 
 
 What define the computer science? What make the computer science be the science? 
 The computation complexity theory is one of the main reasons. So our question is:
