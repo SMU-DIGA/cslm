@@ -62,11 +62,14 @@ Ongoing and coming soon.
 ### Theory
 
 1. [Physics of Language Models](https://physics.allen-zhu.com/)
+2. [Chain of Thought Empowers Transformers to Solve Inherently Serial Problems](https://arxiv.org/abs/2402.12875)
+3. [Autoregressive Large Language Models are Computationally Universal](https://arxiv.org/abs/2410.03170)
 
 ### Benchmarking
 
 1. [NPHardEval: Dynamic Benchmark on Reasoning Ability of Large Language Models via Complexity Classes](https://arxiv.org/abs/2312.14890)
 2. [ZebraLogic: On the Scaling Limits of LLMs for Logical Reasoning](https://arxiv.org/abs/2502.01100)
+3. [REASONING GYM: Reasoning Environments for Reinforcement Learning with Verifiable Rewards](https://arxiv.org/abs/2505.24760)
 
 ### Training
 
@@ -74,8 +77,9 @@ Ongoing and coming soon.
 2. [NP-Engine: Empowering Optimization Reasoning in Large Language Models with Verifiable Synthetic NP Problems](https://www.arxiv.org/abs/2510.16476)
 3. [RLVE: Scaling Up Reinforcement Learning for Language Models with Adaptive Verifiable Environments](https://arxiv.org/abs/2511.07317)
 
-
 ### Memory
 
 1. [How much do language models memorize?](https://arxiv.org/abs/2505.24832)
 2. [The Landscape of Memorization in LLMs: Mechanisms, Measurement, and Mitigation](https://arxiv.org/abs/2507.05578)
+3. [Information Capacity: Evaluating the Efficiency of Large Language Models via Text Compression](https://arxiv.org/abs/2511.08066)
+4. [Retaining by Doing: The Role of On-Policy Data in Mitigating Forgetting](https://arxiv.org/abs/2510.18874)
