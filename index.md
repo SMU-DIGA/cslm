@@ -50,7 +50,9 @@ These four desiderata should be the golden criteria for a good benchmark.
 
 Motivating by this, we propose NPPC, the first ever-scaling benchmark for LLMs. 
 
-### More to come
+### 2. Language Models as Computers: A Computational Complexity Perspective
+
+Ongoing and coming soon. 
 
 
 ---
