@@ -62,6 +62,11 @@ Ongoing and coming soon.
 
 ## Existing Other Related Work
 
+### Perspective: Shifting from Models to Problems
+
+1. [The Second Half](https://ysymyth.github.io/The-Second-Half/)
+2. [Welcome to the Era of Experience](https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf)
+
 ### Theory
 
 1. [Physics of Language Models](https://physics.allen-zhu.com/)
