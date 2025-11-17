@@ -97,7 +97,20 @@ Ongoing and coming soon.
 
 ### Memory
 
+
+#### Internal Memory
+
 1. [How much do language models memorize?](https://arxiv.org/abs/2505.24832)
 2. [The Landscape of Memorization in LLMs: Mechanisms, Measurement, and Mitigation](https://arxiv.org/abs/2507.05578)
 3. [Information Capacity: Evaluating the Efficiency of Large Language Models via Text Compression](https://arxiv.org/abs/2511.08066)
 4. [Retaining by Doing: The Role of On-Policy Data in Mitigating Forgetting](https://arxiv.org/abs/2510.18874)
+
+#### External Memory
+
+The mechanism of the external memory is still not very clear. RAG and database can be viewed as the external memory. 
+That still depends on LM's capabilities to process the contents. It would be an agentic system. 
+
+
+### Tools
+
+
