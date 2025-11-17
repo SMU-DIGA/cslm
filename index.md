@@ -38,13 +38,13 @@ As far as we can see, the differences of computer science of language models inc
 1. **Generation-solving-verifying triad**, rather than the solving-verifying dichotomy. Traditional computers can only do solving and verifying, but LMs can also generate the problems. It is so difficult for traditional computers to generate the problems and investigate the complexity of generating the problems. But for LMs, we surely can do this. 
 2. **Token as the basic operation**. The basic operation for traditional computers are computation operation, while for LMs, the basic operation is token. 
 3. **Buggy**. With many-year efforts, we do not suffer in the system errors of traditional computers for solving and verifying, once programed correctly. However, LMs can hallucinate, i.e., make mistakes. We can not make sure that LMs always return the correct solutions even so-called correctly prompted. In this case, how to investigate this? 
-4. **Multimodal**. Most traditional computers can only handle text and numerical. But multimodal LMs can handle audio, image/video and any modal of data. We can really build a universal theoretical understanding. 
+4. **Multimodal**. Most traditional computers can only handle text and numerical, they can handle the images in pixel level but cannot understand them from pixel to concept, therefore, they fail to operate the images like human. But multimodal LMs can handle audio, image/video and any modal of data. We can really build a universal theoretical understanding. 
 
 
 This would be a new direction for us to understand the intrinsic properties of problems and multimodal LMs. 
 Providing a universal perspective for us to design benchmarks, collect data, build model architectures and train the models.
 
-**Welcome to THE new computer science!**
+**Welcome to the era of new computer science!**
 
 ---
 
