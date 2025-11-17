@@ -39,7 +39,7 @@ we can verify the solutions of the problems in polynomial time, but not necessar
 polynomial time. 
 
 As far as we can see, the differences of computer science of language models include:
-1. **Generation-solving-verifying triad**, rather than the solving-verifying dichotomy. Traditional computers can only do solving and verifying, but LMs can also generate the problems. It is so difficult for traditional computers to generate the problems and investigate the complexity of generating the problems. But for LMs, we surely can do this. 
+1. **Generating-solving-verifying triad**, rather than the solving-verifying dichotomy. Traditional computers can only do solving and verifying, but LMs can also generate the problems. It is so difficult for traditional computers to generate the problems and investigate the complexity of generating the problems. But for LMs, we surely can do this. 
 2. **Token as the basic operation**. The basic operation for traditional computers are computation operation, while for LMs, the basic operation is token. 
 3. **Buggy**. With many-year efforts, we do not suffer in the system errors of traditional computers for solving and verifying, once programed correctly. However, LMs can hallucinate, i.e., make mistakes. We can not make sure that LMs always return the correct solutions even so-called correctly prompted. In this case, how to investigate this? 
 4. **Multimodal**. Most traditional computers can only handle text and numerical, they can handle the images in pixel level but cannot understand them from pixel to concept, therefore, they fail to operate the images like human. But multimodal LMs can handle audio, image/video and any modal of data. We can really build a universal theoretical understanding. 
@@ -52,7 +52,7 @@ The ultimate goal of computer science of language models is **completing the tas
 
 | Aspect | Traditional Computer Science | Computer Science of Language Models |
 |--------|------------------------------|--------------------------------------|
-| **Problem-Solving Paradigm** | Solving-verifying dichotomy | Generation-solving-verifying triad |
+| **Problem-Solving Paradigm** | Solving-verifying dichotomy | Generating-solving-verifying triad |
 | **Basic Operation** | Computation operations | Token operations |
 | **Reliability** | Deterministic (correct if programmed correctly) | Non-deterministic (can hallucinate/make mistakes) |
 | **Modality** | Text and numerical only; pixel-level image processing without conceptual understanding | Multimodal (audio, image, video, text) with conceptual understanding |
