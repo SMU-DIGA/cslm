@@ -19,7 +19,7 @@ Let's build the computer science of language models together.
 ## (Multimodal) Language Models as New Universal Computers
 
 <div align="center">
-<img src="{{ site.baseurl }}/assets/cslm.svg"  style="width:100%">
+<img src="{{ site.baseurl }}/assets/cslm.svg"  style="width:70%">
 </div>
 
 Language model is becoming the new universal computer, which can solve
