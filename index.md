@@ -110,10 +110,13 @@ Ongoing and coming soon.
 The mechanism of the external memory is still not very clear. RAG and database can be viewed as the external memory. 
 That still depends on LM's capabilities to process the contents. It would be an agentic system. 
 
+1. [Unveil the Duality of Retrieval-Augmented Generation: Theoretical Analysis and Practical Solution](https://openreview.net/forum?id=jaoYoivyjD)
+
 
 ### Tools
 
-How to theoretical deal with the tool using in LMs. One view is that tool using can make LMs token-efficient and reducing errors. 
+How to theoretical deal with the tool using in LMs. One view is that tool using can make LMs token-efficient and less erroneous. 
 
+1. [Understanding Tool-Integrated Reasoning](https://arxiv.org/abs/2508.19201)
 
 
