@@ -19,7 +19,7 @@ Welcome to the era of new computer science!
 ## (Multimodal) Language Models as New Universal Computers
 
 <div align="center">
-<img src="{{ site.baseurl }}/assets/cslm.svg"  style="width:70%">
+<img src="{{ site.baseurl }}/assets/cslm.svg"  style="width:50%">
 </div>
 
 Language model is becoming the new universal computer, which can solve
