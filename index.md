@@ -113,4 +113,7 @@ That still depends on LM's capabilities to process the contents. It would be an 
 
 ### Tools
 
+How to theoretical deal with the tool using in LMs. One view is that tool using can make LMs token-efficient and reducing errors. 
+
+
 
