@@ -12,7 +12,7 @@ h1 {
 
 # Computer Science of Language Models
 
-Let's build the computer science of language models together. 
+<span style="font-size: 1.5em;"><strong>Welcome to the era of new computer science!</strong></span>
 
 ---
 
@@ -49,7 +49,6 @@ This would be a new direction for us to understand the intrinsic properties of p
 Providing a universal perspective for us to design benchmarks, collect data, build model architectures and train the models.
 
 
-<span style="font-size: 1.5em;"><strong>Welcome to the era of new computer science!</strong></span>
 
 [//]: # (**Welcome to the era of new computer science!**)
 
