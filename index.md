@@ -3,6 +3,12 @@ layout: default
 title: Home
 ---
 
+<style>
+h1 {
+    text-align: center;
+}
+</style>
+
 
 # Computer Science of Language Models
 

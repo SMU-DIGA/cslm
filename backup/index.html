@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Building the computer science of language models - exploring computational complexity theory for LLMs">
+    <meta name="keywords" content="language models, computational complexity, NP-complete, LLM benchmarking, NPPC">
+    <meta name="author" content="Rainwangphy">
+    <title>Computer Science of Language Models</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3em;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1a1a1a;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin: 1.5em 0 0.5em 0;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 2em;
+        }
+
+        h2 {
+            color: #1a1a1a;
+            font-size: 1.8em;
+            font-weight: 600;
+            border-bottom: 3px solid #0366d6;
+            padding-bottom: 0.3em;
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+        }
+
+        h3 {
+            color: #24292e;
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-top: 1.8em;
+            margin-bottom: 0.8em;
+        }
+
+        p {
+            margin: 1.2em 0;
+            text-align: justify;
+        }
+
+        a {
+            color: #0366d6;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #0256c7;
+            text-decoration: underline;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e1e4e8;
+            margin: 3em 0;
+        }
+
+        strong {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        ol, ul {
+            margin: 1.2em 0;
+            padding-left: 2.5em;
+        }
+
+        li {
+            margin: 0.8em 0;
+            line-height: 1.7;
+        }
+
+        ol li {
+            padding-left: 0.5em;
+        }
+
+        .highlight {
+            background-color: #fff8dc;
+            padding: 0.1em 0.3em;
+            border-radius: 3px;
+        }
+
+        footer {
+            margin-top: 4em;
+            padding-top: 2em;
+            border-top: 1px solid #e1e4e8;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            h3 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+
+        <header>
+            <h1>Computer Science of Language Models</h1>
+            <p class="subtitle">Let's build the computer science of language models together.</p>
+        </header>
+
+        <hr>
+
+<h2>(Multimodal) Language Models as New Universal Computers</h2>
+
+<p>Language model is becoming the new universal computer, which can solve even more problems than traditional computers. However, there is still lacking the computer science of language models.</p>
+
+<p>What define the computer science? What make the computer science be the science? The computation complexity theory is one of the main reasons. So our question is: Can we build the complexity theory (maybe empirically) for langauge models?</p>
+
+<p>The traditional computer science is based on <strong>the solving-verifying dichotomy</strong>. Specifically, researchers build the computer science by checking the differences between solving a problem and verifying a solution of the problem. For P problems, we can solve the problems and verifying the solutions of the problems in polynomial time. For NP problems, we can verify the solutions of the problems in polynomial time, but not necessarily solve the problems in polynomial time.</p>
+
+<p>As far as we can see, the differences of computer science of language models include:</p>
+
+<ol>
+    <li><strong>Generation-solving-verifying triad</strong>, rather than the solving-verifying dichotomy. Traditional computers can only do solving and verifying, but LMs can also generate the problems. It is so difficult for traditional computers to generate the problems and investigate the complexity of generating the problems. But for LMs, we surely can do this.</li>
+    <li><strong>Token as the basic operation</strong>. The basic operation for traditional computers are computation operation, while for LMs, the basic operation is token.</li>
+    <li><strong>Buggy</strong>. With many-year efforts, we do not suffer in the system errors of traditional computers for solving and verifying, once programed correctly. However, LMs can hallucinate, i.e., make mistakes. We can not make sure that LMs always return the correct solutions even so-called correctly prompted. In this case, how to investigate this?</li>
+    <li><strong>Multimodal</strong>. Most traditional computers can only handle text and numerical. But multimodal LMs can handle audio, image/video and any modal of data. We can really build a universal theoretical understanding.</li>
+</ol>
+
+<p>This would be a new direction for us to understand the intrinsic properties of problems and multimodal LMs. Providing a universal perspective for us to design benchmarks, collect data, build model architectures and train the models.</p>
+
+<p><strong>Welcome to THE new computer science!</strong></p>
+
+<hr>
+
+<h2>Our Work</h2>
+
+<h3>1. <a href="https://arxiv.org/abs/2504.11239">Nondeterministic Polynomial-time Problem Challenge: An Ever-Scaling Reasoning Benchmark for LLMs</a> (April 2025)</h3>
+
+<p>Given that almost all benchmarks will be crushed in short time, i.e., higher than 90% accuracy within 1 year, and hacked, i.e., overfit to the current benchmarks. In this work, we propose the <strong>ever-scalingness</strong>, where we believe that a good benchmark should be scaling over complexity, i.e., the difficulty of generated problems can be increased continuously, instances, i.e., generating infinite instances to avoid overfitting, oversight, i.e., easy for verification even for very difficult problems, and coverage, i.e., be real-world relevant. These four desiderata should be the golden criteria for a good benchmark.</p>
+
+<p>Motivating by this, we propose NPPC, the first ever-scaling benchmark for LLMs.</p>
+
+<h3>2. Language Models as Computers: A Computational Complexity Perspective</h3>
+
+<p>Ongoing and coming soon.</p>
+
+<hr>
+
+<h2>Existing Other Related Work</h2>
+
+<h3>Perspective: Shifting from Models to Problems</h3>
+
+<ol>
+    <li><a href="https://ysymyth.github.io/The-Second-Half/">The Second Half</a></li>
+    <li><a href="https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf">Welcome to the Era of Experience</a></li>
+</ol>
+
+<h3>Theory</h3>
+
+<ol>
+    <li><a href="https://physics.allen-zhu.com/">Physics of Language Models</a></li>
+    <li><a href="https://arxiv.org/abs/2402.12875">Chain of Thought Empowers Transformers to Solve Inherently Serial Problems</a></li>
+    <li><a href="https://arxiv.org/abs/2410.03170">Autoregressive Large Language Models are Computationally Universal</a></li>
+</ol>
+
+<h3>Benchmarking</h3>
+
+<ol>
+    <li><a href="https://arxiv.org/abs/2312.14890">NPHardEval: Dynamic Benchmark on Reasoning Ability of Large Language Models via Complexity Classes</a></li>
+    <li><a href="https://arxiv.org/abs/2502.01100">ZebraLogic: On the Scaling Limits of LLMs for Logical Reasoning</a></li>
+    <li><a href="https://arxiv.org/abs/2505.24760">REASONING GYM: Reasoning Environments for Reinforcement Learning with Verifiable Rewards</a></li>
+</ol>
+
+<h3>Training</h3>
+
+<ol>
+    <li><a href="https://arxiv.org/abs/2505.16368">SATURN: SAT-based Reinforcement Learning to Unleash Language Model Reasoning</a></li>
+    <li><a href="https://www.arxiv.org/abs/2510.16476">NP-Engine: Empowering Optimization Reasoning in Large Language Models with Verifiable Synthetic NP Problems</a></li>
+    <li><a href="https://arxiv.org/abs/2511.07317">RLVE: Scaling Up Reinforcement Learning for Language Models with Adaptive Verifiable Environments</a></li>
+</ol>
+
+<h3>Memory</h3>
+
+<ol>
+    <li><a href="https://arxiv.org/abs/2505.24832">How much do language models memorize?</a></li>
+    <li><a href="https://arxiv.org/abs/2507.05578">The Landscape of Memorization in LLMs: Mechanisms, Measurement, and Mitigation</a></li>
+    <li><a href="https://arxiv.org/abs/2511.08066">Information Capacity: Evaluating the Efficiency of Large Language Models via Text Compression</a></li>
+    <li><a href="https://arxiv.org/abs/2510.18874">Retaining by Doing: The Role of On-Policy Data in Mitigating Forgetting</a></li>
+</ol>
+
+
+        <footer>
+            <p>&copy; 2025 Computer Science of Language Models | Built with ❤️ for the LLM Research Community</p>
+        </footer>
+    </div>
+</body>
+</html>
