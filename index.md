@@ -78,7 +78,7 @@ These four desiderata should be the golden criteria for a good benchmark.
 Motivating by this, we propose NPPC, the first ever-scaling benchmark for LLMs. 
 
 <div align="center">
-<img src="{{ site.baseurl }}/assets/nppc.svg"  style="width:70%">
+<img src="{{ site.baseurl }}/assets/nppc.svg"  style="width:80%">
 </div>
 
 ### 2. Language Models as Computers: A Computational Complexity Perspective
