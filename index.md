@@ -44,7 +44,11 @@ As far as we can see, the differences of computer science of language models inc
 This would be a new direction for us to understand the intrinsic properties of problems and multimodal LMs. 
 Providing a universal perspective for us to design benchmarks, collect data, build model architectures and train the models.
 
-**Welcome to the era of new computer science!**
+
+<span class="large-text"><strong>Welcome to the era of new computer science!</strong></span>
+
+[//]: # (**Welcome to the era of new computer science!**)
+
 
 ---
 
@@ -68,7 +72,7 @@ Ongoing and coming soon.
 
 ## Existing Other Related Work
 
-### Perspective: Shifting from Models to Problems
+### Perspective: Shifting the Focus from Models to Problems
 
 1. [The Second Half](https://ysymyth.github.io/The-Second-Half/)
 2. [Welcome to the Era of Experience](https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf)
