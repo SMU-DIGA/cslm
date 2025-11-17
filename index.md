@@ -122,7 +122,8 @@ That still depends on LM's capabilities to process the contents. It would be an 
 
 ### Tools
 
-How to theoretical deal with the tool using in LMs. One view is that tool using can make LMs token-efficient and less erroneous. 
+How to theoretically deal with the tool using/creation in LMs. One view is that tool using can make LMs token-efficient and less erroneous. All agentic operations, including
+retrieval, searching, tool calling, tool creation, can be counted into tokens. 
 
 1. [Understanding Tool-Integrated Reasoning](https://arxiv.org/abs/2508.19201)
 
