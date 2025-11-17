@@ -12,7 +12,7 @@ h1 {
 
 # Computer Science of Language Models
 
-<span style="font-size: 1.5em;"><strong>Welcome to the era of new computer science!</strong></span>
+Welcome to the era of new computer science!
 
 ---
 
