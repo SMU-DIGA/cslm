@@ -47,7 +47,18 @@ As far as we can see, the differences of computer science of language models inc
 
 This would be a new direction for us to understand the intrinsic properties of problems and multimodal LMs. 
 Providing a universal perspective for us to design benchmarks, collect data, build model architectures and train the models.
+The ultimate goal of computer science of language models is **completing the tasks correctly with less tokens (maybe also less runtime and memory)**.
 
+
+| Aspect | Traditional Computer Science | Computer Science of Language Models |
+|--------|------------------------------|--------------------------------------|
+| **Problem-Solving Paradigm** | Solving-verifying dichotomy | Generation-solving-verifying triad |
+| **Basic Operation** | Computation operations | Token operations |
+| **Reliability** | Deterministic (correct if programmed correctly) | Non-deterministic (can hallucinate/make mistakes) |
+| **Modality** | Text and numerical only; pixel-level image processing without conceptual understanding | Multimodal (audio, image, video, text) with conceptual understanding |
+| **Complexity Analysis** | Focus on time/space complexity for solving and verifying | Include complexity of generation; token efficiency |
+| **Ultimate Goal** | Completing tasks with less time and memory | Completing tasks correctly with less tokens (and potentially less runtime/memory) |
+| **Research Focus** | Algorithm correctness and efficiency | Intrinsic properties of problems, benchmark design, data collection, model architecture, and training |
 
 
 [//]: # (**Welcome to the era of new computer science!**)
