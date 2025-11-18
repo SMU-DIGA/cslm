@@ -12,7 +12,7 @@ h1 {
 
 # Computer Science of Language Models
 
-Welcome to the era of new computer science!
+Welcome to the era of new computer science! Let's be the new Cook!
 
 ---
 
@@ -133,7 +133,7 @@ That still depends on LM's capabilities to process the contents. It would be an 
 
 ### Tools
 
-How to theoretically deal with the tool using/creation in LMs. One view is that tool using can make LMs token-efficient and less erroneous. All agentic operations, including
+How to theoretically deal with the tool using/creation in LMs. One view is that tool using can make LMs more token-efficient and less erroneous. All agentic operations, including
 retrieval, searching, tool calling, tool creation, can be counted into tokens. 
 
 1. [Understanding Tool-Integrated Reasoning](https://arxiv.org/abs/2508.19201)
