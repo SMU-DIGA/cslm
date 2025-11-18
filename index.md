@@ -12,7 +12,9 @@ h1 {
 
 # Computer Science of Language Models
 
-Welcome to the era of new computer science! Let's be the new Cook!
+Welcome to the era of new computer science! 
+
+Let's be the new Cook and find the "NPC" problems for language models!
 
 ---
 
