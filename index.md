@@ -81,7 +81,7 @@ Motivating by this, we propose NPPC, the first ever-scaling benchmark for LLMs.
 <img src="{{ site.baseurl }}/assets/nppc.svg"  style="width:80%">
 </div>
 
-### 2. Language Models as Computers: A Computational Complexity Perspective
+### 2. Language Models as Computers
 
 Ongoing and coming soon. 
 
