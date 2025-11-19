@@ -151,3 +151,8 @@ retrieval, searching, tool calling, tool creation, can be counted into tokens.
 1. [Understanding Tool-Integrated Reasoning](https://arxiv.org/abs/2508.19201)
 
 
+## Contact
+
+Chang Yang (chang.yang@connect.polyu.hk) and Xinrun Wang (xrwang@smu.edu.sg)
+
+
