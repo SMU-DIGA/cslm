@@ -44,7 +44,9 @@ As far as we can see, the differences of computer science of language models inc
 1. **Generating-solving-verifying triad**, rather than the solving-verifying dichotomy. Traditional computers can only do solving and verifying, but LMs can also generate the problems. It is so difficult for traditional computers to generate the problems and investigate the complexity of generating the problems. But for LMs, we surely can do this. 
 2. **Token as the basic operation**. The basic operation for traditional computers are computation operation, while for LMs, the basic operation is token. 
 3. **Buggy**. With many-year efforts, we do not suffer in the system errors of traditional computers for solving and verifying, once programed correctly. However, LMs can hallucinate, i.e., make mistakes. We can not make sure that LMs always return the correct solutions even so-called correctly prompted. In this case, how to investigate this? 
-4. **Multimodal**. Most traditional computers can only handle text and numerical, they can handle the images in pixel level but cannot understand them from pixel to concept, therefore, they fail to operate the images like human. But multimodal LMs can handle audio, image/video and any modal of data. We can really build a universal theoretical understanding. 
+4. **Multimodal**. Most traditional computers can only handle text and numerical, they can handle the images in pixel level but cannot understand them from pixel to concept, therefore, they fail to operate the images like human. But multimodal LMs can handle audio, image/video and any modal of data. We can really build a universal theoretical understanding.
+5. **Generalizability**. Algorithms, the core of traditional computer science, are usually problem-specific. While (multimodal) LMs are general-purpose. Evaluating the models on different problems can reveal the fundamental properties of models, and letting different models to solve one problems will reveal the fundamental properties of the problems. 
+From LSTM, to transformer, to diffusion LMs, this is the same to build more advanced computers; from QA, to generation, to math, to HLE, to SWE-bench, this is the same to find the NPC/NP-hard problems.
 
 
 This would be a new direction for us to understand the intrinsic properties of problems and multimodal LMs. 
@@ -108,6 +110,13 @@ Ongoing and coming soon.
 1. [NPHardEval: Dynamic Benchmark on Reasoning Ability of Large Language Models via Complexity Classes](https://arxiv.org/abs/2312.14890)
 2. [ZebraLogic: On the Scaling Limits of LLMs for Logical Reasoning](https://arxiv.org/abs/2502.01100)
 3. [REASONING GYM: Reasoning Environments for Reinforcement Learning with Verifiable Rewards](https://arxiv.org/abs/2505.24760)
+
+
+### Empirical Laws
+
+1. [Scaling Laws for Neural Language Models](https://arxiv.org/abs/2001.08361)
+2. [Training Compute-Optimal Large Language Models](https://arxiv.org/abs/2203.15556)
+
 
 ### Training
 
