@@ -116,6 +116,7 @@ Ongoing and coming soon.
 
 1. [Scaling Laws for Neural Language Models](https://arxiv.org/abs/2001.08361)
 2. [Training Compute-Optimal Large Language Models](https://arxiv.org/abs/2203.15556)
+3. [Densing law of LLMs](https://www.nature.com/articles/s42256-025-01137-0)
 
 
 ### Training
