@@ -21,7 +21,7 @@ Let's be the new Cook and find the "NPC" problems for language models!
 ## (Multimodal) Language Models as New Universal Computers
 
 <div align="center">
-<img src="{{ site.baseurl }}/assets/cslm.svg"  style="width:50%">
+<img src="{{ site.baseurl }}/assets/cslm.svg"  style="width:75%">
 </div>
 
 Language model is becoming the new universal computer, which can solve
@@ -47,23 +47,24 @@ As far as we can see, the differences of computer science of language models inc
 4. **Multimodal**. Most traditional computers can only handle text and numerical, they can handle the images in pixel level but cannot understand them from pixel to concept, therefore, they fail to operate the images like human. But multimodal LMs can handle audio, image/video and any modal of data. We can really build a universal theoretical understanding.
 5. **Generalizability**. Algorithms, the core of traditional computer science, are usually problem-specific. While (multimodal) LMs are general-purpose. Evaluating the models on different problems can reveal the fundamental properties of models, and letting different models to solve one problems will reveal the fundamental properties of the problems. 
 From LSTM, to transformer, to diffusion LMs, this is the same to build more advanced computers; from QA, to generation, to math, to HLE, to SWE-bench, this is the same to find the NPC/NP-hard problems.
-
+6. **Two-stage training-inference process**. Traditional computer science only involves the inference stage, but this one also involves the training stage. Training is like chip design, FPGA, programming langauge design in traditional computer science, we do need science for training, scaling laws as one prominent example. 
 
 This would be a new direction for us to understand the intrinsic properties of problems and multimodal LMs. 
 Providing a universal perspective for us to design benchmarks, collect data, build model architectures and train the models.
 The ultimate goal of computer science of language models is **completing the tasks correctly with less tokens (maybe also less runtime and memory)**.
 
-
 | Aspect | Traditional Computer Science | Computer Science of Language Models |
-|--------|------------------------------|--------------------------------------|
-| **Problem-Solving Paradigm** | Solving-verifying dichotomy | Generating-solving-verifying triad |
+|--------|------------------------------|-------------------------------------|
+| **Core Paradigm** | Solving-verifying dichotomy | Generating-solving-verifying triad |
 | **Basic Operation** | Computation operations | Token operations |
-| **Reliability** | Deterministic (correct if programmed correctly) | Non-deterministic (can hallucinate/make mistakes) |
-| **Modality** | Text and numerical only; pixel-level image processing without conceptual understanding | Multimodal (audio, image, video, text) with conceptual understanding |
-| **Complexity Analysis** | Focus on time/space complexity for solving and verifying | Include complexity of generation; token efficiency |
-| **Ultimate Goal** | Completing tasks with less time and memory | Completing tasks correctly with less tokens (and potentially less runtime/memory) |
-| **Research Focus** | Algorithm correctness and efficiency | Intrinsic properties of problems, benchmark design, data collection, model architecture, and training |
-
+| **Reliability** | Deterministic (correct if programmed correctly) | Probabilistic (can hallucinate/make mistakes) |
+| **Modality** | Text and numerical; pixel-level images without conceptual understanding | Multimodal (audio, image, video) with conceptual understanding |
+| **Generalizability** | Problem-specific algorithms | General-purpose models across diverse problems |
+| **Process Stages** | Inference only | Two-stage: training + inference |
+| **Evolution Focus** | Algorithm design for specific problems | Model architecture evolution (LSTM → Transformer → Diffusion) + Problem complexity discovery (QA → Generation → Math → HLE → SWE-bench) |
+| **Training Analogy** | N/A (or analogous to chip/FPGA/language design) | Essential component with its own science (e.g., scaling laws) |
+| **Ultimate Goal** | Efficient problem solving | Complete tasks correctly with minimal tokens (and potentially less runtime/memory) |
+| **Research Direction** | Understanding computational complexity of problems | Understanding intrinsic properties of both problems and multimodal LMs through universal perspective |
 
 [//]: # (**Welcome to the era of new computer science!**)
 
