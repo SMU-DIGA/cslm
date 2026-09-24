@@ -346,13 +346,6 @@ html[data-theme="dark"] .claim strong { color: var(--link-hover); }
   text-align: center;
 }
 
-.split {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 300px;
-  gap: 1.8rem;
-  align-items: start;
-}
-.split .figure { margin: 0; }
 
 /* ---------------------------------------------------- seven differences */
 
@@ -509,8 +502,7 @@ a.card:hover h3 { color: var(--accent); }
 
 /* ------------------------------------------------------------- read list */
 
-.reading { columns: 2 280px; column-gap: 2.2rem; }
-.reading section { break-inside: avoid; margin-bottom: 1.4rem; }
+.reading section { margin-bottom: 1.6rem; }
 .reading h3 {
   margin: 0 0 .4rem;
   font-family: var(--sans);
@@ -552,8 +544,6 @@ a.card:hover h3 { color: var(--accent); }
 
 @media (max-width: 760px) {
   .def-grid { grid-template-columns: minmax(0, 1fr); }
-  .split { grid-template-columns: minmax(0, 1fr); }
-  .split .figure { max-width: 340px; margin: 0 auto 1rem; }
 }
 
 @media (max-width: 680px) {

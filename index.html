@@ -37,30 +37,22 @@ description: Language models are the new universal computer. They demand their o
 <!-- ============================================================ -->
 <h2 id="differences"><span class="no">01</span><span>Seven Fundamental Differences</span></h2>
 
-<div class="split">
-  <ol class="diffs">
-    <li><b>Generating–solving–verifying triad</b>
-      Classical theory studies how hard it is to <em>solve</em> a problem compared with <em>verifying</em> an answer (P vs. NP). LMs add a third operation, <em>generation</em>: they can propose new problems, so the cost of generating a problem can be studied too.</li>
-    <li><b>Token as the basic operation</b>
-      The unit of computation is the token, not the arithmetic operation. Token count sets both cost and latency.</li>
-    <li><b>Unreliable reasoning</b>
-      LMs hallucinate even when prompted correctly. Correctness becomes a probability, not a guarantee, which makes verification both more important and harder.</li>
-    <li><b>Native multimodality</b>
-      Text, images, audio and video share one representation space, so a model reasons about concepts rather than raw pixels.</li>
-    <li><b>General-purpose capabilities</b>
-      One model covers translation, coding, maths and more by running internal "algorithms" it learned from data.</li>
-    <li><b>Training–inference stages</b>
-      Training plays the role of programming, but the link from data to behavior is indirect. Scaling laws are the first success story.</li>
-    <li><b>Inherent knowledge</b>
-      A sorting algorithm knows nothing about what it sorts. An LM is a knowledge base and a reasoning engine at once, and that knowledge can help or mislead its reasoning.</li>
-  </ol>
-  <figure class="figure">
-    <div class="figure__frame">
-      <img src="{{ site.baseurl }}/assets/seven-differences.png" alt="Seven fundamental differences between CSLM and traditional computer science" width="600" />
-    </div>
-    <figcaption>Seven differences between CSLM and traditional CS.</figcaption>
-  </figure>
-</div>
+<ol class="diffs">
+  <li><b>Generating–solving–verifying triad</b>
+    Classical theory studies how hard it is to <em>solve</em> a problem compared with <em>verifying</em> an answer (P vs. NP). LMs add a third operation, <em>generation</em>: they can propose new problems, so the cost of generating a problem can be studied too.</li>
+  <li><b>Token as the basic operation</b>
+    The unit of computation is the token, not the arithmetic operation. Token count sets both cost and latency.</li>
+  <li><b>Unreliable reasoning</b>
+    LMs hallucinate even when prompted correctly. Correctness becomes a probability, not a guarantee, which makes verification both more important and harder.</li>
+  <li><b>Native multimodality</b>
+    Text, images, audio and video share one representation space, so a model reasons about concepts rather than raw pixels.</li>
+  <li><b>General-purpose capabilities</b>
+    One model covers translation, coding, maths and more by running internal "algorithms" it learned from data.</li>
+  <li><b>Training–inference stages</b>
+    Training plays the role of programming, but the link from data to behavior is indirect. Scaling laws are the first success story.</li>
+  <li><b>Inherent knowledge</b>
+    A sorting algorithm knows nothing about what it sorts. An LM is a knowledge base and a reasoning engine at once, and that knowledge can help or mislead its reasoning.</li>
+</ol>
 
 <div class="table-wrap">
   <table>
@@ -201,13 +193,6 @@ description: Language models are the new universal computer. They demand their o
   <li class="is-future"><span class="when">2029–30</span><div class="what"><b>Maturity &amp; integration</b>
     <p>Settle, or formally characterize, LM-P vs. LM-NP. Map the reliability cliff: the point where p = 0.99 needs exponentially more tokens than p = 0.5. Derive a universal token-complexity scaling law, a Chinchilla law for CSLM. Launch CSLM-Bench.</p></div></li>
 </ol>
-
-<h3>Alternative views</h3>
-<ul>
-  <li><strong>"Traditional CS already covers LMs."</strong> Quantum computing is part of CS, yet it has its own subfield. The seven differences justify the same for LMs.</li>
-  <li><strong>"The physics of LMs is enough."</strong> It is complementary: physics of LMs explains <em>how</em> models work internally, while CSLM studies how problems relate to models.</li>
-  <li><strong>"Cognitive science is enough."</strong> Brains run on slow analog neurons under tight energy limits. LMs are fast digital systems that scale differently.</li>
-</ul>
 
 <!-- ============================================================ -->
 <h2 id="our-work"><span class="no">06</span><span>Our Work</span></h2>
