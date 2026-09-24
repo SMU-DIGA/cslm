@@ -26,34 +26,17 @@
     <a class="site-title" href="{{ site.baseurl }}/">CSLM</a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">☰</button>
     <ul class="nav-links" id="nav-links">
-      <li class="nav-sec"><a href="{{ site.baseurl }}/#differences">Differences</a></li>
-      <li class="nav-sec"><a href="{{ site.baseurl }}/#token-complexity">Token Complexity</a></li>
-      <li class="nav-sec"><a href="{{ site.baseurl }}/#roadmap">Roadmap</a></li>
-      <li class="nav-sec"><a href="{{ site.baseurl }}/#our-work">Our Work</a></li>
-      <li class="nav-sec"><a href="{{ site.baseurl }}/#reading-list">Reading List</a></li>
-      <li><a href="https://rainwangphy.github.io/">Xinrun Wang ↗</a></li>
+      <li><a href="{{ site.baseurl }}/#differences">Differences</a></li>
+      <li><a href="{{ site.baseurl }}/#token-complexity">Token Complexity</a></li>
+      <li><a href="{{ site.baseurl }}/#roadmap">Roadmap</a></li>
+      <li><a href="{{ site.baseurl }}/#our-work">Our Work</a></li>
+      <li><a href="{{ site.baseurl }}/#reading-list">Reading List</a></li>
       <li><button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><span id="theme-icon">☾</span></button></li>
     </ul>
   </div>
 </div>
 
 <div class="layout">
-  <aside class="sidebar">
-    <p class="sidebar__title">Computer Science of Language Models</p>
-    <p class="sidebar__bio">Building the theory of language models as the new universal computer.</p>
-    <nav class="toc" aria-label="On this page">
-      <a href="#differences"><span>01</span>Seven Differences</a>
-      <a href="#token-complexity"><span>02</span>Token Complexity</a>
-      <a href="#connections"><span>03</span>Connections</a>
-      <a href="#roadmap"><span>04</span>Roadmap</a>
-      <a href="#our-work"><span>05</span>Our Work</a>
-      <a href="#reading-list"><span>06</span>Reading List</a>
-    </nav>
-    <ul class="sidebar__links">
-      <li><a href="https://rainwangphy.github.io/lab.html">DIGA@SMU</a></li>
-      <li><a href="mailto:xrwang@smu.edu.sg">xrwang@smu.edu.sg</a></li>
-    </ul>
-  </aside>
   <main class="content">
     {{ content }}
   </main>
@@ -85,24 +68,6 @@
   links.addEventListener('click', function (e) {
     if (e.target.tagName === 'A') links.classList.remove('is-open');
   });
-
-  // Highlight the section currently in view in the sidebar.
-  var tocLinks = document.querySelectorAll('.toc a');
-  if ('IntersectionObserver' in window && tocLinks.length) {
-    var byId = {};
-    tocLinks.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (!en.isIntersecting) return;
-        tocLinks.forEach(function (a) { a.classList.remove('is-active'); });
-        byId[en.target.id].classList.add('is-active');
-      });
-    }, { rootMargin: '-20% 0px -70% 0px' });
-    Object.keys(byId).forEach(function (id) {
-      var el = document.getElementById(id);
-      if (el) io.observe(el);
-    });
-  }
 })();
 </script>
 </body>
