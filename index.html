@@ -4,7 +4,7 @@ title: Home
 description: Language models are the new universal computer. They demand their own computer science — built on token complexity.
 ---
 
-<header class="hero">
+<header class="hero" id="top">
   <p class="eyebrow">Position Paper · 2026</p>
   <h1>Language Models Demand New Computer Science</h1>
   <p class="subtitle">Language models are becoming the new universal computer. We argue they need their own theory — the Computer Science of Language Models (CSLM).</p>
@@ -14,128 +14,138 @@ description: Language models are the new universal computer. They demand their o
     deterministic, operation-based machines. Language models break nearly every one of its
     assumptions: they generate tokens instead of executing operations, succeed with some probability
     instead of guaranteeing correctness, understand many modalities natively, and carry vast knowledge
-    in their parameters. As a result, we can build ever more powerful models, but we cannot yet
-    predict their behavior, explain their limits or guide their development from first principles.
+    in their parameters. We can build ever more powerful models, but we cannot yet predict their
+    behavior, explain their limits or guide their development from first principles.
   </p>
 
-  <ul class="chips">
-    <li><a class="chip" href="#differences">7 fundamental differences</a></li>
-    <li><a class="chip" href="#token-complexity">Token complexity</a></li>
-    <li><a class="chip" href="#roadmap">Roadmap 2026–2030</a></li>
-  </ul>
+  <div class="stats">
+    <a class="stat" href="#differences"><span class="stat__num">7</span><span class="stat__label">fundamental differences from classical CS</span></a>
+    <a class="stat" href="#token-complexity"><span class="stat__num">1</span><span class="stat__label">core measure: token complexity</span></a>
+    <a class="stat" href="#roadmap"><span class="stat__num">5</span><span class="stat__label">year roadmap, 2026–2030</span></a>
+  </div>
 </header>
 
 <div class="claim">
-  <p><strong>Definition (CSLM).</strong> The Computer Science of Language Models is a theoretical and empirical
-  framework for understanding computation by language models. It covers complexity analysis, algorithmic behavior,
-  reliability, and how model architectures, training procedures and problem-solving capabilities relate to each other
-  across modalities and tasks.</p>
-  <p>The goal: <strong>complete tasks correctly with fewer tokens</strong>, and so move LM development from empirical
-  scaling to principled engineering.</p>
+  <p><strong>CSLM</strong> is a theoretical and empirical framework for understanding computation by language models.
+  It covers complexity analysis, algorithmic behavior, reliability, and how model architectures, training procedures
+  and problem-solving capabilities relate to each other across modalities and tasks.</p>
 </div>
 
 <!-- ============================================================ -->
-<h2 id="differences"><span class="no">01</span><span>Seven Fundamental Differences</span></h2>
+<section id="differences">
+<h2><span class="no">01</span><span>Seven Fundamental Differences</span></h2>
+<p class="section-intro">Where language model computation departs from traditional computer science.</p>
 
-<div class="split">
-  <ol class="diffs">
-    <li><b>Generating–solving–verifying triad</b>
-      Classical theory studies how hard it is to <em>solve</em> a problem compared with <em>verifying</em> an answer (P vs. NP). LMs add a third operation, <em>generation</em>: they can propose new problems, so the cost of generating a problem can be studied too.</li>
-    <li><b>Token as the basic operation</b>
-      The unit of computation is the token, not the arithmetic operation. Token count sets both cost and latency.</li>
-    <li><b>Unreliable reasoning</b>
-      LMs hallucinate even when prompted correctly. Correctness becomes a probability, not a guarantee, which makes verification both more important and harder.</li>
-    <li><b>Native multimodality</b>
-      Text, images, audio and video share one representation space, so a model reasons about concepts rather than raw pixels.</li>
-    <li><b>General-purpose capabilities</b>
-      One model covers translation, coding, maths and more by running internal "algorithms" it learned from data.</li>
-    <li><b>Training–inference stages</b>
-      Training plays the role of programming, but the link from data to behavior is indirect. Scaling laws are the first success story.</li>
-    <li><b>Inherent knowledge</b>
-      A sorting algorithm knows nothing about what it sorts. An LM is a knowledge base and a reasoning engine at once, and that knowledge can help or mislead its reasoning.</li>
-  </ol>
-  <figure class="figure">
-    <div class="figure__frame">
-      <img src="{{ site.baseurl }}/assets/seven-differences.png" alt="Seven fundamental differences between CSLM and traditional computer science" width="600" />
+<div class="diff-grid">
+  <article class="diff">
+    <span class="diff__no">01</span>
+    <h3>Generating–solving–verifying triad</h3>
+    <p class="diff__vs"><span>Solve vs. verify</span><i>→</i><span>Generate, solve, verify</span></p>
+    <p>LMs can propose new problems, so the cost of <em>generating</em> a problem becomes something we can study.</p>
+  </article>
+  <article class="diff">
+    <span class="diff__no">02</span>
+    <h3>Token as the basic operation</h3>
+    <p class="diff__vs"><span>Operations</span><i>→</i><span>Tokens</span></p>
+    <p>The unit of computation is the token. Token count sets both cost and latency.</p>
+  </article>
+  <article class="diff">
+    <span class="diff__no">03</span>
+    <h3>Unreliable reasoning</h3>
+    <p class="diff__vs"><span>Deterministic</span><i>→</i><span>Probabilistic</span></p>
+    <p>LMs hallucinate even when prompted correctly, which makes verification both more important and harder.</p>
+  </article>
+  <article class="diff">
+    <span class="diff__no">04</span>
+    <h3>Native multimodality</h3>
+    <p class="diff__vs"><span>Pixels</span><i>→</i><span>Concepts</span></p>
+    <p>Text, images, audio and video share one representation space, so models reason about what they see and hear.</p>
+  </article>
+  <article class="diff">
+    <span class="diff__no">05</span>
+    <h3>General-purpose capabilities</h3>
+    <p class="diff__vs"><span>One algorithm per problem</span><i>→</i><span>One model</span></p>
+    <p>A single model translates, codes and proves, using internal "algorithms" it learned from data.</p>
+  </article>
+  <article class="diff">
+    <span class="diff__no">06</span>
+    <h3>Training–inference stages</h3>
+    <p class="diff__vs"><span>Inference only</span><i>→</i><span>Training + inference</span></p>
+    <p>Training plays the role of programming, but the link from data to behavior is indirect. Scaling laws are the first success story.</p>
+  </article>
+  <article class="diff">
+    <span class="diff__no">07</span>
+    <h3>Inherent knowledge</h3>
+    <p class="diff__vs"><span>Data-agnostic</span><i>→</i><span>Knowledge in weights</span></p>
+    <p>An LM is a knowledge base and a reasoning engine at once, and that knowledge can help or mislead its reasoning.</p>
+  </article>
+  <article class="diff diff--goal">
+    <span class="diff__no">Goal</span>
+    <h3>Complete tasks correctly with fewer tokens</h3>
+    <p>Move LM development from empirical scaling to principled engineering, and understand both problems and models along the way.</p>
+  </article>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<section id="token-complexity">
+<h2><span class="no">02</span><span>Token Complexity</span></h2>
+
+<div class="tc">
+  <div>
+    <p>
+      A language model system (LMS) <var>𝓜</var> is made of one or more LMs. On a problem instance
+      <var>I</var>, it uses <var>τ</var> tokens and succeeds with probability <var>p</var>. The aim is to
+      <strong>minimize tokens while maximizing the success rate</strong>.
+    </p>
+    <div class="def">
+      <span class="def__label">Definition · Token Complexity</span>
+      <p>Token complexity is a <em>curve</em>, not a single number: the set of achievable (tokens, success rate) pairs.</p>
+      <span class="eq">TC(I, 𝓜) = { τ(I, 𝓜, p) : p ∈ [0, 1] }</span>
     </div>
-    <figcaption>Seven differences between CSLM and traditional CS.</figcaption>
+  </div>
+  <figure class="curve" aria-label="Illustrative token complexity curves for two systems">
+    <svg viewBox="0 0 320 230" role="img">
+      <line class="axis" x1="40" y1="190" x2="305" y2="190" />
+      <line class="axis" x1="40" y1="190" x2="40" y2="18" />
+      <line class="grid" x1="40" y1="40" x2="305" y2="40" />
+      <text class="tick" x="34" y="44" text-anchor="end">1</text>
+      <text class="tick" x="34" y="194" text-anchor="end">0</text>
+      <path class="c2" d="M40,186 C120,178 170,130 215,95 S285,56 305,52" />
+      <path class="c1" d="M40,186 C60,120 90,78 140,62 S250,46 305,44" />
+      <circle class="c1-dot" cx="140" cy="62" r="3.5" />
+      <text class="lab lab1" x="146" y="80">𝓜₁</text>
+      <text class="lab lab2" x="222" y="118">𝓜₂</text>
+      <text class="axis-label" x="305" y="210" text-anchor="end">tokens τ →</text>
+      <text class="axis-label" x="14" y="110" transform="rotate(-90 14 110)" text-anchor="middle">success rate p</text>
+    </svg>
+    <figcaption>Illustrative: two systems trace different curves on the same instance.</figcaption>
   </figure>
 </div>
 
-<div class="table-wrap">
-  <table>
-    <thead>
-      <tr><th>Aspect</th><th>Traditional CS</th><th>CS of Language Models</th></tr>
-    </thead>
-    <tbody>
-      <tr><th>Paradigm</th><td>Solving–verifying dichotomy</td><td>Generating–solving–verifying triad</td></tr>
-      <tr><th>Basic unit</th><td>Computation operations</td><td>Tokens</td></tr>
-      <tr><th>Reliability</th><td>Deterministic, correct if programmed correctly</td><td>Probabilistic, can hallucinate</td></tr>
-      <tr><th>Modality</th><td>Bits and numbers; pixels without concepts</td><td>Native multimodal understanding</td></tr>
-      <tr><th>Scope</th><td>Problem-specific algorithms</td><td>General-purpose models</td></tr>
-      <tr><th>Lifecycle</th><td>Inference only</td><td>Training + inference</td></tr>
-      <tr><th>Knowledge</th><td>Data-agnostic at runtime</td><td>Knowledge encoded in parameters</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<!-- ============================================================ -->
-<h2 id="token-complexity"><span class="no">02</span><span>Token Complexity</span></h2>
-
-<p>
-  The central concept of CSLM is <strong>token complexity</strong>. A language model system (LMS)
-  <var>𝓜</var> is made of one or more LMs. On a problem instance <var>I</var>, the system uses
-  <var>τ</var> tokens and succeeds with probability <var>p</var> ∈ [0, 1]. The aim is to
-  <em>minimize tokens while maximizing the success rate</em>.
-</p>
-
-<div class="def">
-  <span class="def__label">Definition · Token Complexity</span>
-  <p>Token complexity is a <em>curve</em>, not a single number. It is the set of achievable (tokens, success rate) pairs:</p>
-  <span class="eq">TC(I, 𝓜) = { ( τ<sup>in</sup>(I, 𝓜, p), τ<sup>out</sup>(I, 𝓜, p) ) : p ∈ [0, 1] }</span>
-</div>
-
-<p>
-  Tokens are not uniform: one token can cost more compute or carry more information than another. Classical
-  complexity faces the same issue, since a single "operation" in the RAM model can be a cache hit or a floating-point
-  division. The abstraction still works because what matters is how the count <em>scales</em>, not the constant
-  factors.
-</p>
-
-<div class="def-grid">
-  <div class="def">
-    <span class="def__label">System card &amp; problem card</span>
-    <p><b>SC(𝓜)</b> gathers the token complexity of one system over all problems.
-    <b>PC(P)</b> gathers the token complexity of one problem over all systems.</p>
-  </div>
-  <div class="def">
-    <span class="def__label">Asymptotic token complexity</span>
-    <p>𝓜 solves <var>P</var> in <b>O(f(n))</b> tokens at success rate <var>p*</var> if τ<sup>out</sup> ≤ C·f(|I|) for all large enough instances.</p>
-  </div>
-  <div class="def">
-    <span class="def__label">LM-P &amp; LM-NP</span>
-    <p><b>LM-P</b>: problems an LMS can solve with poly(|I|) tokens at success rate ≥ <var>p*</var>.
-    <b>LM-NP</b>: problems whose solutions can be verified with poly(|I|) tokens.</p>
-  </div>
-  <div class="def">
-    <span class="def__label">LM-Complete &amp; reductions</span>
-    <p>A problem in LM-NP is <b>LM-Complete</b> if every LM-NP problem reduces to it token-efficiently, i.e. A ≤<sub>T</sub> B using poly(|I<sub>A</sub>|) tokens. Is LM-P = LM-NP?</p>
-  </div>
-</div>
+<dl class="defs">
+  <dt>System &amp; problem cards</dt>
+  <dd><b>SC(𝓜)</b> gathers the token complexity of one system over all problems. <b>PC(P)</b> gathers it for one problem over all systems.</dd>
+  <dt>Asymptotic complexity</dt>
+  <dd>𝓜 solves <var>P</var> in <b>O(f(n))</b> tokens at success rate <var>p*</var> if τ<sup>out</sup> ≤ C·f(|I|) for all large enough instances.</dd>
+  <dt>LM-P &amp; LM-NP</dt>
+  <dd><b>LM-P</b>: solvable with poly(|I|) tokens at success rate ≥ <var>p*</var>. <b>LM-NP</b>: solutions verifiable with poly(|I|) tokens.</dd>
+  <dt>LM-Complete</dt>
+  <dd>A problem in LM-NP to which every LM-NP problem reduces token-efficiently. <em>Is LM-P = LM-NP?</em></dd>
+</dl>
 
 <h3>Why tokens, and not FLOPs?</h3>
-<p>
-  The FLOPs needed per token depend on the inference stack (speculative decoding changes them, for example), and
-  FLOPs cannot be observed at all for closed models. Token count does not depend on the inference framework, it is
-  always observable, and it directly sets cost and latency. It also records the <em>structure</em> of the reasoning:
-  how a model breaks a problem down, backtracks and elaborates. The <strong>token-to-operation ratio</strong>
-  τ<sup>out</sup> / (n log n) for sorting links token complexity to classical algorithmic complexity.
-</p>
+<div class="why">
+  <div><b>Framework-agnostic</b><p>FLOPs per token change with the inference stack, for example with speculative decoding. Token count does not.</p></div>
+  <div><b>Observable</b><p>FLOPs are hidden for closed models. Token usage is always visible, and it sets cost and latency.</p></div>
+  <div><b>Structural</b><p>Tokens record how a model breaks a problem down, backtracks and elaborates, not just how much arithmetic it did.</p></div>
+</div>
+</section>
 
 <!-- ============================================================ -->
-<h2 id="connections"><span class="no">03</span><span>Connections to Existing Research</span></h2>
-
-<p>Token complexity gives existing lines of LM research a common language:</p>
+<section id="connections">
+<h2><span class="no">03</span><span>Connections to Existing Research</span></h2>
+<p class="section-intro">Token complexity gives existing lines of LM research a common language.</p>
 
 <figure class="figure">
   <div class="figure__frame">
@@ -144,84 +154,98 @@ description: Language models are the new universal computer. They demand their o
   <figcaption>Left: links to classical CS. Right: links to LLM research.</figcaption>
 </figure>
 
-<div class="card-grid">
-  <div class="card">
-    <span class="card__tag">Scaling laws</span>
+<div class="topics">
+  <div class="topic">
+    <h3>Scaling laws</h3>
     <p>Training laws over (N, D, C) may carry over to token complexity. Inference scaling, p ∼ (τ<sup>out</sup>)<sup>β</sup>, is a direct trade-off between tokens and success rate.</p>
   </div>
-  <div class="card">
-    <span class="card__tag">Memory</span>
-    <p>Compare TC(I, 𝓜) with TC(I, 𝓜 ⊕ E), where E is external memory. Retrieval spends tokens but can raise <var>p</var>. Self-evolving memory adds summarization and reflection costs.</p>
+  <div class="topic">
+    <h3>Memory</h3>
+    <p>Compare TC(I, 𝓜) with TC(I, 𝓜 ⊕ E). Retrieval spends tokens but can raise <var>p</var>. Self-evolving memory adds summarization costs.</p>
   </div>
-  <div class="card">
-    <span class="card__tag">Tools</span>
-    <p>Tools take heavy computation off the model. Building a tool pays off when TC<sub>create</sub> + Σ TC(I<sub>i</sub>, 𝓜 ⊕ t) &lt; Σ TC(I<sub>i</sub>, 𝓜).</p>
+  <div class="topic">
+    <h3>Tools</h3>
+    <p>Tools take heavy computation off the model. Building a tool pays off once its cost is spread over enough similar instances.</p>
   </div>
-  <div class="card">
-    <span class="card__tag">Multi-agent systems</span>
-    <p>System-level token complexity depends on three things: how the task is split, which model handles each part, and how much the agents need to communicate.</p>
+  <div class="topic">
+    <h3>Multi-agent systems</h3>
+    <p>Total cost depends on how the task is split, which model handles each part, and how much the agents need to communicate.</p>
   </div>
-  <div class="card">
-    <span class="card__tag">Fine-tuning</span>
-    <p>Treat "make 𝓜 solve P′ with success rate <var>p</var>" as the instance. TC then measures exploration cost, sample efficiency and convergence in RL fine-tuning.</p>
+  <div class="topic">
+    <h3>Fine-tuning</h3>
+    <p>Treat "make 𝓜 solve P′ with success rate <var>p</var>" as the instance. TC then measures exploration cost and sample efficiency.</p>
   </div>
-  <div class="card">
-    <span class="card__tag">A first experiment</span>
-    <p>On sorting (n = 120), gpt-5-mini and gpt-5-nano trace clearly different accuracy-vs-token curves: ≈110K vs. ≈280K tokens at 16 trials.</p>
+  <div class="topic">
+    <h3>A first experiment</h3>
+    <p>On sorting (n = 120), gpt-5-mini and gpt-5-nano trace clearly different curves: ≈110K vs. ≈280K tokens at 16 trials.</p>
   </div>
 </div>
+</section>
 
 <!-- ============================================================ -->
-<h2 id="open-questions"><span class="no">04</span><span>Open Questions</span></h2>
+<section id="roadmap">
+<h2><span class="no">04</span><span>Roadmap 2026–2030</span></h2>
+<p class="section-intro">Classical complexity theory took decades to mature. We propose five years for CSLM.</p>
 
-<ol class="diffs">
-  <li><b>Complexity and hardness</b>
-    What is the LM analogue of SAT? Are there problems that need exponentially many tokens to solve but only polynomially many to verify? Can hard problems be reduced systematically to a few LM-complete ones?</li>
-  <li><b>Training dynamics</b>
-    How should compute be split, C = C<sub>train</sub> + C<sub>infer</sub>? How many tokens does it take to learn a new capability through SFT or RL fine-tuning?</li>
-  <li><b>Memory, tools and agents</b>
-    How do we measure what these add to token complexity? When is it better to scale up parameters than to give a model external resources?</li>
+<ol class="history">
+  <li><span>1936</span><b>Turing</b>Turing machine</li>
+  <li><span>1965</span><b>Edmonds</b>The class P</li>
+  <li><span>1971</span><b>Cook</b>Cook–Levin theorem</li>
+  <li><span>1972</span><b>Karp</b>21 NP-complete problems</li>
 </ol>
 
-<!-- ============================================================ -->
-<h2 id="roadmap"><span class="no">05</span><span>Roadmap 2026–2030</span></h2>
+<div class="stages">
+  <article class="stage">
+    <span class="stage__when">2026</span>
+    <h3>Foundations &amp; formalization</h3>
+    <ul>
+      <li>Standard conventions for counting tokens</li>
+      <li>Stable definitions of LM-P, LM-NP, LM-Complete</li>
+      <li>First lower bounds and benchmarks with instance generators</li>
+    </ul>
+  </article>
+  <article class="stage">
+    <span class="stage__when">2027–2028</span>
+    <h3>Classification &amp; structure</h3>
+    <ul>
+      <li>Find LM-complete problems, or prove none exist</li>
+      <li>Reduction framework over 25+ problem classes</li>
+      <li>Extend to multimodal inputs and RL fine-tuning</li>
+    </ul>
+  </article>
+  <article class="stage">
+    <span class="stage__when">2029–2030</span>
+    <h3>Maturity &amp; integration</h3>
+    <ul>
+      <li>Settle or characterize LM-P vs. LM-NP</li>
+      <li>Map the reliability cliff from p = 0.5 to 0.99</li>
+      <li>A universal token-complexity scaling law; CSLM-Bench</li>
+    </ul>
+  </article>
+</div>
 
-<p>Classical complexity theory took decades to mature. We propose a five-year roadmap to make CSLM a rigorous discipline.</p>
-
-<ol class="timeline">
-  <li><span class="when">1936</span><div class="what"><b>Turing</b> · the Turing machine</div></li>
-  <li><span class="when">1965</span><div class="what"><b>Edmonds</b> · the class P</div></li>
-  <li><span class="when">1971</span><div class="what"><b>Cook</b> · the Cook–Levin theorem</div></li>
-  <li><span class="when">1972</span><div class="what"><b>Karp</b> · 21 NP-complete problems</div></li>
-  <li class="divider"><span></span><div class="what">Computer Science of Language Models</div></li>
-  <li class="is-future"><span class="when">2026</span><div class="what"><b>Foundations &amp; formalization</b>
-    <p>Agree on how to count tokens across prompts, retrieved context and chain-of-thought. Fix the definitions of LM-P, LM-NP and LM-Complete. Prove the first lower bounds, and publish benchmarks with asymptotic instance generators (sorting, SAT, graph coloring, TSP, knapsack).</p></div></li>
-  <li class="is-future"><span class="when">2027–28</span><div class="what"><b>Classification &amp; structural theory</b>
-    <p>Find LM-complete problems, or prove none exist. Build a reduction framework covering 25+ problem classes. Prove unconditional lower bounds, and extend the theory to multimodal inputs and RL fine-tuning.</p></div></li>
-  <li class="is-future"><span class="when">2029–30</span><div class="what"><b>Maturity &amp; integration</b>
-    <p>Settle, or formally characterize, LM-P vs. LM-NP. Map the reliability cliff: the point where p = 0.99 needs exponentially more tokens than p = 0.5. Derive a universal token-complexity scaling law, a Chinchilla law for CSLM. Launch CSLM-Bench.</p></div></li>
+<h3>Open questions</h3>
+<ol class="questions">
+  <li><b>Hardness.</b> What is the LM analogue of SAT? Are there problems that need exponentially many tokens to solve but only polynomially many to verify?</li>
+  <li><b>Training.</b> How should compute be split, C = C<sub>train</sub> + C<sub>infer</sub>? How many tokens does it take to learn a new capability?</li>
+  <li><b>Systems.</b> When is it better to scale up parameters than to give a model memory, tools or other agents?</li>
 </ol>
-
-<h3>Alternative views</h3>
-<ul>
-  <li><strong>"Traditional CS already covers LMs."</strong> Quantum computing is part of CS, yet it has its own subfield. The seven differences justify the same for LMs.</li>
-  <li><strong>"The physics of LMs is enough."</strong> It is complementary: physics of LMs explains <em>how</em> models work internally, while CSLM studies how problems relate to models.</li>
-  <li><strong>"Cognitive science is enough."</strong> Brains run on slow analog neurons under tight energy limits. LMs are fast digital systems that scale differently.</li>
-</ul>
+</section>
 
 <!-- ============================================================ -->
-<h2 id="our-work"><span class="no">06</span><span>Our Work</span></h2>
+<section id="our-work">
+<h2><span class="no">05</span><span>Our Work</span></h2>
 
-<div class="card-grid">
+<div class="work">
   <div class="card">
-    <span class="card__tag">Position · 2026</span>
+    <span class="card__tag">Position · 2026 · Under review</span>
     <h3>Language Models Demand New Computer Science</h3>
-    <p>Seven fundamental differences, token complexity, and a five-year roadmap for CSLM. Under review.</p>
+    <p>Seven fundamental differences, token complexity, and a five-year roadmap for CSLM.</p>
   </div>
   <a class="card" href="https://openreview.net/forum?id=Xb6d5lGLb2">
     <span class="card__tag">TMLR · 2026</span>
     <h3>NPPC: an Ever-Scaling Reasoning Benchmark</h3>
-    <p>The Nondeterministic Polynomial-time Problem Challenge scales in difficulty, generates unlimited instances and stays easy to verify.</p>
+    <p>A benchmark built on NP-complete problems. It scales in difficulty, generates unlimited instances and stays easy to verify.</p>
   </a>
 </div>
 
@@ -229,11 +253,13 @@ description: Language models are the new universal computer. They demand their o
   <div class="figure__frame">
     <img src="{{ site.baseurl }}/assets/nppc.svg" alt="Overview of the NPPC benchmark" loading="lazy" />
   </div>
-  <figcaption>NPPC: an ever-scaling benchmark built on NP-complete problems (<a href="https://arxiv.org/abs/2504.11239">arXiv</a>).</figcaption>
+  <figcaption>NPPC overview (<a href="https://arxiv.org/abs/2504.11239">arXiv</a>).</figcaption>
 </figure>
+</section>
 
 <!-- ============================================================ -->
-<h2 id="reading-list"><span class="no">07</span><span>Reading List</span></h2>
+<section id="reading-list">
+<h2><span class="no">06</span><span>Reading List</span></h2>
 
 <div class="reading">
   <section>
@@ -292,12 +318,12 @@ description: Language models are the new universal computer. They demand their o
     </ul>
   </section>
 </div>
+</section>
 
-<!-- ============================================================ -->
-<h2 id="contact"><span class="no">08</span><span>Contact</span></h2>
-
-<p>
-  Let's build the computer science of language models together. Comments and collaborations are welcome:
-  Chang Yang (<a href="mailto:chang.yang@connect.polyu.hk">chang.yang@connect.polyu.hk</a>) and
-  Xinrun Wang (<a href="mailto:xrwang@smu.edu.sg">xrwang@smu.edu.sg</a>).
-</p>
+<section id="contact" class="coda">
+  <p>
+    Let's build the computer science of language models together. Comments and collaborations are welcome:
+    Chang Yang (<a href="mailto:chang.yang@connect.polyu.hk">chang.yang@connect.polyu.hk</a>) and
+    Xinrun Wang (<a href="mailto:xrwang@smu.edu.sg">xrwang@smu.edu.sg</a>).
+  </p>
+</section>
