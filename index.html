@@ -207,14 +207,11 @@ description: "NeurIPS 2026 position paper. Language models are the new universal
   <strong>1.13×</strong>.
 </p>
 
-<!-- ============================================================ -->
-<h2 id="evidence"><span class="no">03</span><span>A First Measurement: Sorting</span></h2>
-
-<p class="lead">Even on sorting, two models trace clearly different token complexity curves.</p>
+<h3 id="evidence">A first measurement: sorting</h3>
 
 <p>
-  We measured the token complexity of sorting (n = 120, 30 instances) for gpt-5-mini and gpt-5-nano, with up to 16
-  independent trials per instance and exact-match success.
+  Even on sorting, two models trace clearly different curves. We measured the token complexity of sorting (n = 120,
+  30 instances) for gpt-5-mini and gpt-5-nano, with up to 16 independent trials per instance and exact-match success.
 </p>
 
 <figure class="figure">
@@ -231,7 +228,7 @@ description: "NeurIPS 2026 position paper. Language models are the new universal
 </ul>
 
 <!-- ============================================================ -->
-<h2 id="connections"><span class="no">04</span><span>Connections to Existing Research</span></h2>
+<h2 id="connections"><span class="no">03</span><span>Connections to Existing Research</span></h2>
 
 <p class="lead">Scaling laws, memory, tools, agents and fine-tuning all become questions about the same curve: how they move tokens and success rate.</p>
 
@@ -266,7 +263,7 @@ description: "NeurIPS 2026 position paper. Language models are the new universal
 </div>
 
 <!-- ============================================================ -->
-<h2 id="roadmap"><span class="no">05</span><span>Open Questions &amp; Roadmap 2026–2030</span></h2>
+<h2 id="roadmap"><span class="no">04</span><span>Open Questions &amp; Roadmap 2026–2030</span></h2>
 
 <p class="lead">Classical complexity theory went from Turing to Karp in four decades. We propose a five-year roadmap to make CSLM a rigorous discipline.</p>
 
@@ -297,7 +294,7 @@ description: "NeurIPS 2026 position paper. Language models are the new universal
 </ol>
 
 <!-- ============================================================ -->
-<h2 id="related-work"><span class="no">06</span><span>Related Work</span></h2>
+<h2 id="related-work"><span class="no">05</span><span>Related Work</span></h2>
 
 <p class="lead">CSLM builds on several lines of work that already bring classical computer science to language models.</p>
 
@@ -329,6 +326,7 @@ description: "NeurIPS 2026 position paper. Language models are the new universal
     <p class="framing">Expressivity results and interpretability ask which algorithms a model <em>can</em> run and <em>does</em> run. CSLM adds how many tokens running them costs.</p>
     <ul>
       <li><a href="https://jmlr.org/papers/v22/20-302.html">Attention is Turing-Complete</a> <span>Transformers are universal in principle.</span></li>
+      <li><a href="https://arxiv.org/abs/2410.03170">Autoregressive Large Language Models are Computationally Universal</a> <span>Autoregressive decoding alone can realize universal computation.</span></li>
       <li><a href="https://arxiv.org/abs/2402.12875">Chain of Thought Empowers Transformers to Solve Inherently Serial Problems</a> <span>CoT raises expressivity in circuit-complexity terms.</span></li>
       <li><a href="https://arxiv.org/abs/2507.07544">Position: We Need an Algorithmic Understanding of Generative AI</a> <span>AlgEval, a framework for which algorithms LLMs learn and use.</span></li>
       <li><a href="https://arxiv.org/abs/2510.15987">AlgoTrace: Algorithmic Primitives and Compositional Geometry of Reasoning</a> <span>Links reasoning traces to internal activations.</span></li>
@@ -341,14 +339,42 @@ description: "NeurIPS 2026 position paper. Language models are the new universal
     <ul>
       <li><a href="https://arxiv.org/abs/2602.02909">BAPO bounds</a> <span>Worst-case lower bounds on chain-of-thought length from transformer bandwidth. A white-box instance of the lower bounds CSLM predicts.</span></li>
       <li><a href="https://physics.allen-zhu.com/">Physics of Language Models</a> <span>A microscopic view of knowledge storage and reasoning inside the model. CSLM is the macroscopic view.</span></li>
-      <li><a href="https://arxiv.org/abs/2408.00724">Inference Scaling Laws</a> <span>Empirical tokens-vs-success measurements, the structure CSLM formalizes as the token complexity curve.</span></li>
       <li>Statistical learning theory <span>Sample complexity counts training examples. Token complexity counts inference cost.</span></li>
+    </ul>
+  </section>
+  <section>
+    <h3>Scaling laws and efficiency</h3>
+    <p class="framing">Scaling laws are the first success story of CSLM. We expect analogous laws for token complexity, and efficiency measures that hold across tokenizers.</p>
+    <ul>
+      <li><a href="https://arxiv.org/abs/2001.08361">Scaling Laws for Neural Language Models</a> <span>Loss follows power laws in parameters, data and compute.</span></li>
+      <li><a href="https://arxiv.org/abs/2203.15556">Training Compute-Optimal Large Language Models</a> <span>Chinchilla: scale parameters and training tokens together.</span></li>
+      <li><a href="https://arxiv.org/abs/2408.00724">Inference Scaling Laws</a> <span>Empirical tokens-vs-success measurements, the structure CSLM formalizes as the token complexity curve.</span></li>
+      <li><a href="https://www.nature.com/articles/s42256-025-01137-0">Densing Law of LLMs</a> <span>Capability per parameter grows exponentially over time.</span></li>
+      <li><a href="https://arxiv.org/abs/2511.08066">Information Capacity</a> <span>Inference efficiency as text compression per unit of compute, comparable across tokenizers.</span></li>
+    </ul>
+  </section>
+  <section>
+    <h3>Memory, tools and fine-tuning</h3>
+    <p class="framing">CSLM measures what each addition is worth by comparing TokC(I, 𝓜) with TokC(I, 𝓜 ⊕ E) or TokC(I, 𝓜 ⊕ T), and treats training tokens as rewriting the algorithm.</p>
+    <ul>
+      <li><a href="https://arxiv.org/abs/2505.24832">How Much Do Language Models Memorize?</a> <span>GPT-style models store about 3.6 bits per parameter.</span></li>
+      <li><a href="https://arxiv.org/abs/2507.05578">The Landscape of Memorization in LLMs</a> <span>What drives memorization, and how to detect and mitigate it.</span></li>
+      <li><a href="https://openreview.net/forum?id=jaoYoivyjD">Unveil the Duality of Retrieval-Augmented Generation</a> <span>When retrieved text helps generation, and when it hurts.</span></li>
+      <li><a href="https://arxiv.org/abs/2508.19201">Understanding Tool-Integrated Reasoning</a> <span>Tools strictly expand what a model can solve.</span></li>
+      <li><a href="https://arxiv.org/abs/2510.18874">Retaining by Doing</a> <span>RL forgets less than SFT, because its data is on-policy.</span></li>
+    </ul>
+  </section>
+  <section>
+    <h3>Perspectives</h3>
+    <p class="framing">Broader views on where language model research is heading.</p>
+    <ul>
+      <li><a href="https://ysymyth.github.io/The-Second-Half/">The Second Half</a> <span>The focus of AI shifts from training methods to defining problems and evaluation.</span></li>
+      <li><a href="https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf">Welcome to the Era of Experience</a> <span>Agents will learn mainly from their own experience rather than human data.</span></li>
     </ul>
   </section>
 </div>
 
-<!-- ============================================================ -->
-<h2 id="our-work"><span class="no">07</span><span>Our Work</span></h2>
+<h3 id="our-work" class="subsection">Our work</h3>
 
 <div class="card-grid">
   <a class="card" href="{{ site.baseurl }}/docs/CSLM_NeurIPS2026.pdf">
@@ -371,50 +397,7 @@ description: "NeurIPS 2026 position paper. Language models are the new universal
 </figure>
 
 <!-- ============================================================ -->
-<h2 id="reading-list"><span class="no">08</span><span>Further Reading</span></h2>
-
-<div class="reading reading--cols reading--3">
-  <section>
-    <h3>Perspective</h3>
-    <ul>
-      <li><a href="https://ysymyth.github.io/The-Second-Half/">The Second Half</a></li>
-      <li><a href="https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf">Welcome to the Era of Experience</a></li>
-    </ul>
-  </section>
-  <section>
-    <h3>Theory</h3>
-    <ul>
-      <li><a href="https://arxiv.org/abs/2410.03170">Autoregressive Large Language Models are Computationally Universal</a></li>
-    </ul>
-  </section>
-  <section>
-    <h3>Empirical laws</h3>
-    <ul>
-      <li><a href="https://arxiv.org/abs/2001.08361">Scaling Laws for Neural Language Models</a></li>
-      <li><a href="https://arxiv.org/abs/2203.15556">Training Compute-Optimal Large Language Models</a></li>
-      <li><a href="https://www.nature.com/articles/s42256-025-01137-0">Densing Law of LLMs</a></li>
-    </ul>
-  </section>
-  <section>
-    <h3>Memory</h3>
-    <ul>
-      <li><a href="https://arxiv.org/abs/2505.24832">How Much Do Language Models Memorize?</a></li>
-      <li><a href="https://arxiv.org/abs/2507.05578">The Landscape of Memorization in LLMs</a></li>
-      <li><a href="https://arxiv.org/abs/2511.08066">Information Capacity: Efficiency via Text Compression</a></li>
-      <li><a href="https://arxiv.org/abs/2510.18874">Retaining by Doing: On-Policy Data Mitigates Forgetting</a></li>
-      <li><a href="https://openreview.net/forum?id=jaoYoivyjD">Unveil the Duality of Retrieval-Augmented Generation</a></li>
-    </ul>
-  </section>
-  <section>
-    <h3>Tools</h3>
-    <ul>
-      <li><a href="https://arxiv.org/abs/2508.19201">Understanding Tool-Integrated Reasoning</a></li>
-    </ul>
-  </section>
-</div>
-
-<!-- ============================================================ -->
-<h2 id="cite"><span class="no">09</span><span>Cite &amp; Contact</span></h2>
+<h2 id="cite"><span>Cite &amp; Contact</span></h2>
 
 <pre class="bibtex"><code>@inproceedings{yang2026cslm,
   title     = {Language Models Demand New Computer Science},

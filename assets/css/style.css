@@ -209,9 +209,14 @@ img { max-width: 100%; height: auto; }
 
 .content h3 {
   font-family: var(--serif);
-  font-size: 1.08rem;
+  font-size: 1.22rem;
   font-weight: 600;
-  margin: 1.8rem 0 .6rem;
+  margin: 2.2rem 0 .7rem;
+}
+.content h3.subsection {
+  margin-top: 2.6rem;
+  padding-top: 1.6rem;
+  border-top: 1px dashed var(--border-strong);
 }
 
 .content p { margin: 0 0 1rem; }
@@ -678,7 +683,6 @@ a.card:hover h3 { color: var(--accent); }
   gap: .4rem 2.4rem;
   align-items: start;
 }
-.reading--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .reading h3 {
   margin: 0 0 .4rem;
   font-family: var(--sans);
@@ -736,12 +740,11 @@ a.card:hover h3 { color: var(--accent); }
 
 @media (max-width: 960px) {
   .diff-cards--more, .terms { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .reading--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 760px) {
   .def-grid, .pillars, .card-grid--3, .diff-cards--core, .diff-cards--more,
-  .terms, .reading--cols, .reading--3 { grid-template-columns: minmax(0, 1fr); }
+  .terms, .reading--cols { grid-template-columns: minmax(0, 1fr); }
   .content h2 { font-size: 1.4rem; margin-top: 3.2rem; }
   .content .lead { font-size: 1.08rem; }
 }
