@@ -535,7 +535,7 @@ html[data-theme="dark"] .def--key { background: var(--bg-soft); }
 }
 .compare summary:hover { color: var(--link-hover); }
 /* Size the comparison table to its content instead of stretching the middle column. */
-.compare table { width: auto; }
+.compare table { width: auto; margin: 0 auto; }
 .compare th, .compare td { padding-right: 2rem; }
 
 .findings { list-style: none; padding: 0 !important; }
