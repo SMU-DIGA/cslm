@@ -133,26 +133,26 @@ description: "NeurIPS 2026 position paper. Language models are the new universal
 
 <figure class="figure">
   <div class="figure__frame figure__frame--plain">
-    <svg class="tc-chart" viewBox="0 0 560 290" role="img" aria-labelledby="tc-chart-title">
+    <svg class="tc-chart" viewBox="0 0 880 290" role="img" aria-labelledby="tc-chart-title">
       <title id="tc-chart-title">Two systems' token complexity curves: A reaches the target success rate with fewer tokens, B needs more tokens but reaches a higher ceiling</title>
-      <line class="axis" x1="70" y1="250" x2="525" y2="250" />
+      <line class="axis" x1="70" y1="250" x2="844" y2="250" />
       <line class="axis" x1="70" y1="250" x2="70" y2="40" />
       <text x="62" y="54" text-anchor="end">1</text>
       <text x="62" y="254" text-anchor="end">0</text>
-      <text x="525" y="282" text-anchor="end">tokens τ →</text>
+      <text x="844" y="282" text-anchor="end">tokens τ →</text>
       <text x="20" y="150" text-anchor="middle" transform="rotate(-90 20 150)">success rate p</text>
-      <line class="guide" x1="70" y1="100" x2="520" y2="100" />
+      <line class="guide" x1="70" y1="100" x2="835" y2="100" />
       <text class="pstar" x="62" y="104" text-anchor="end">p*</text>
-      <line class="guide" x1="194" y1="100" x2="194" y2="250" />
-      <line class="guide" x1="309" y1="100" x2="309" y2="250" />
-      <text class="lab-a" x="194" y="268" text-anchor="middle">τ<tspan dy="4" font-size="10">A</tspan></text>
-      <text class="lab-b" x="309" y="268" text-anchor="middle">τ<tspan dy="4" font-size="10">B</tspan></text>
-      <path class="curve-b" d="M70,250 L81,237 L92,226 L103,214 L114,204 L125,194 L136,185 L147,177 L158,169 L169,162 L180,155 L191,148 L202,142 L213,136 L224,131 L235,126 L246,121 L257,117 L268,113 L279,109 L290,106 L301,102 L312,99 L323,96 L334,94 L345,91 L356,89 L367,86 L378,84 L389,82 L400,81 L411,79 L422,77 L433,76 L444,74 L455,73 L466,72 L477,71 L488,70 L499,69 L510,68" />
-      <path class="curve-a" d="M70,250 L81,221 L92,198 L103,178 L114,161 L125,147 L136,136 L147,126 L158,118 L169,111 L180,106 L191,101 L202,97 L213,94 L224,91 L235,89 L246,87 L257,86 L268,85 L279,83 L290,83 L301,82 L312,81 L323,81 L334,80 L345,80 L356,80 L367,79 L378,79 L389,79 L400,79 L411,79 L422,79 L433,78 L444,78 L455,78 L466,78 L477,78 L488,78 L499,78 L510,78" />
-      <circle class="dot-a" cx="194" cy="100" r="4.5" />
-      <circle class="dot-b" cx="309" cy="100" r="4.5" />
-      <text class="lab-a" x="140" y="112" text-anchor="end">System A</text>
-      <text class="lab-b" x="330" y="128">System B</text>
+      <line class="guide" x1="281" y1="100" x2="281" y2="250" />
+      <line class="guide" x1="476" y1="100" x2="476" y2="250" />
+      <text class="lab-a" x="281" y="268" text-anchor="middle">τ<tspan dy="4" font-size="10">A</tspan></text>
+      <text class="lab-b" x="476" y="268" text-anchor="middle">τ<tspan dy="4" font-size="10">B</tspan></text>
+      <path class="curve-b" d="M70,250 L89,237 L107,226 L126,214 L145,204 L164,194 L182,185 L201,177 L220,169 L238,162 L257,155 L276,148 L294,142 L313,136 L332,131 L350,126 L369,121 L388,117 L407,113 L425,109 L444,106 L463,102 L481,99 L500,96 L519,94 L538,91 L556,89 L575,86 L594,84 L612,82 L631,81 L650,79 L668,77 L687,76 L706,74 L724,73 L743,72 L762,71 L781,70 L799,69 L818,68" />
+      <path class="curve-a" d="M70,250 L89,221 L107,198 L126,178 L145,161 L164,147 L182,136 L201,126 L220,118 L238,111 L257,106 L276,101 L294,97 L313,94 L332,91 L350,89 L369,87 L388,86 L407,85 L425,83 L444,83 L463,82 L481,81 L500,81 L519,80 L538,80 L556,80 L575,79 L594,79 L612,79 L631,79 L650,79 L668,79 L687,78 L706,78 L724,78 L743,78 L762,78 L781,78 L799,78 L818,78" />
+      <circle class="dot-a" cx="281" cy="100" r="4.5" />
+      <circle class="dot-b" cx="476" cy="100" r="4.5" />
+      <text class="lab-a" x="189" y="112" text-anchor="end">System A</text>
+      <text class="lab-b" x="512" y="128">System B</text>
     </svg>
   </div>
   <figcaption>An illustration. At target success rate p*, System A needs τ<sub>A</sub> tokens and System B needs more, but B reaches a higher ceiling. A single accuracy or token count cannot express this trade-off.</figcaption>
