@@ -93,6 +93,19 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 
 img { max-width: 100%; height: auto; }
 
+/* Outline icons from the sprite in _layouts/default.html. */
+.icon {
+  width: 1em;
+  height: 1em;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: -.125em;
+}
+
 /* --------------------------------------------------------------- masthead */
 
 .masthead {
@@ -147,6 +160,7 @@ img { max-width: 100%; height: auto; }
 .nav-links a:hover { background: var(--bg-soft); color: var(--text); text-decoration: none; }
 .nav-links a.nav-paper { color: var(--accent); font-weight: 600; }
 .nav-links a.is-active { background: var(--bg-soft); color: var(--text); }
+.nav-links a.lang-switch { border: 1px solid var(--border); padding: .3rem .6rem; margin-left: .2rem; font-weight: 600; }
 
 .theme-toggle, .nav-toggle {
   border: 1px solid var(--border);
@@ -213,7 +227,12 @@ img { max-width: 100%; height: auto; }
   font-weight: 600;
   margin: 2.2rem 0 .7rem;
 }
+.content h3.subsection .icon, .content h2 .h2-icon { color: var(--accent); }
+.content h2 .h2-icon { width: 1.15rem; height: 1.15rem; align-self: center; }
 .content h3.subsection {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
   margin-top: 2.6rem;
   padding-top: 1.6rem;
   border-top: 1px dashed var(--border-strong);
@@ -271,7 +290,9 @@ var, .m { font-style: italic; font-family: var(--serif); }
 .actions { display: flex; flex-wrap: wrap; gap: .55rem; margin: 0 !important; padding: 0 !important; list-style: none; }
 .actions li { margin: 0; }
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
   font-family: var(--sans);
   font-size: .86rem;
   font-weight: 600;
@@ -287,6 +308,20 @@ a.btn:hover { border-color: var(--accent); color: var(--accent); text-decoration
 a.btn--primary:hover { color: #fff; background: var(--link-hover); border-color: var(--link-hover); }
 html[data-theme="dark"] .btn--primary,
 html[data-theme="dark"] a.btn--primary:hover { color: var(--bg); }
+.btn--soon {
+  color: var(--text-faint);
+  background: transparent;
+  border-style: dashed;
+  cursor: default;
+}
+.btn--soon em { font-style: normal; font-weight: 500; color: var(--accent); }
+
+/* CJK has no true italics: emphasize with weight instead of a synthetic slant. */
+:lang(zh) em { font-style: normal; font-weight: 600; }
+
+/* Spaced-out uppercase labels read poorly in CJK; tighten them on the Chinese page. */
+:lang(zh) .eyebrow, :lang(zh) .group-label, :lang(zh) .def__label, :lang(zh) .card__tag,
+:lang(zh) .pillars__q, :lang(zh) .reading h3, :lang(zh) thead th { letter-spacing: .04em; }
 
 .subtitle {
   margin: 0 0 1.6rem;
@@ -436,6 +471,7 @@ html[data-theme="dark"] .def--key { background: var(--bg-soft); }
 }
 .content .pillars a { text-decoration: none; }
 .pillars a:hover { text-decoration: none; border-color: var(--accent); background: var(--accent-soft); transform: translateY(-1px); }
+.pillars__icon { display: block; width: 1.6rem; height: 1.6rem; margin-bottom: .55rem; color: var(--accent); stroke-width: 1.8; }
 .pillars b { display: block; margin-bottom: .25rem; color: var(--text); font-size: 1.02rem; font-weight: 600; }
 .pillars__q {
   display: block;
@@ -472,6 +508,7 @@ html[data-theme="dark"] .def--key { background: var(--bg-soft); }
 .diff-cards--more { grid-template-columns: repeat(4, minmax(0, 1fr)); counter-reset: diff 3; }
 .diff-cards > li {
   counter-increment: diff;
+  position: relative;
   margin: 0;
   padding: .9rem 1rem 1rem;
   border: 1px solid var(--border);
@@ -492,6 +529,15 @@ html[data-theme="dark"] .def--key { background: var(--bg-soft); }
   font-weight: 700;
   color: var(--accent);
   font-variant-numeric: tabular-nums;
+}
+.diff-cards__icon {
+  position: absolute;
+  top: .85rem;
+  right: 1rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  color: var(--accent);
+  stroke-width: 1.8;
 }
 .diff-cards b { display: block; margin-bottom: .25rem; color: var(--text); font-size: 1rem; font-weight: 600; line-height: 1.35; }
 .diff-cards--core:not(.diff-cards--plain) b { font-size: 1.06rem; }
@@ -592,7 +638,9 @@ td:nth-child(2) { color: var(--text-muted); }
 .card h3 { margin: 0 0 .35rem; font-size: 1rem; font-weight: 600; }
 .card p { margin: 0; font-size: .9rem; color: var(--text-muted); line-height: 1.6; }
 .card__tag {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: .45rem;
   margin-bottom: .3rem;
   font-family: var(--sans);
   font-size: .7rem;
@@ -601,6 +649,8 @@ td:nth-child(2) { color: var(--text-muted); }
   text-transform: uppercase;
   color: var(--accent);
 }
+
+.card__tag .icon { width: 1.15rem; height: 1.15rem; }
 
 a.card { color: inherit; display: block; transition: border-color .15s, transform .15s; }
 a.card:hover {
@@ -703,6 +753,8 @@ a.card:hover h3 { color: var(--accent); }
 .reading li:last-child { border-bottom: 0; }
 .content .reading a { color: var(--text); text-decoration: none; }
 .content .reading a:hover { color: var(--accent); }
+.reading h3 { display: flex; align-items: center; gap: .5rem; }
+.reading h3 .icon { width: 1.05rem; height: 1.05rem; color: var(--accent); }
 .reading .framing { margin: 0 0 .5rem; font-size: .93rem; line-height: 1.6; color: var(--text-muted); }
 .reading li > span { display: block; font-size: .84rem; color: var(--text-faint); }
 

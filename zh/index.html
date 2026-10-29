@@ -1,0 +1,400 @@
+---
+layout: default
+title: Home
+lang: zh
+description: "NeurIPS 2026 立场论文。语言模型正在成为新的通用计算机，它需要以 token 复杂度为基础的、属于自己的计算机科学。"
+---
+
+<header class="hero">
+  <p class="eyebrow">NeurIPS 2026 · 立场论文（Position Paper Track）</p>
+  <h1>Language Models Demand New Computer Science</h1>
+
+  <p class="authors">
+    Chang Yang<sup>1</sup>, Xinrun Wang<sup>2,*</sup>, Shuxin Li<sup>3</sup>, Qinggang Zhang<sup>4</sup>,
+    Huachi Zhou<sup>1</sup>, Zhuoyi Lin<sup>5</sup>, Bo Li<sup>1</sup>, Xiao Huang<sup>1</sup>
+  </p>
+  <p class="affil">
+    <sup>1</sup>The Hong Kong Polytechnic University · <sup>2</sup>Singapore Management University ·
+    <sup>3</sup>Nanyang Technological University · <sup>4</sup>Jilin University<br />
+    <sup>5</sup>Institute for Infocomm Research, A*STAR · <sup>*</sup>通讯作者
+  </p>
+
+  <ul class="actions">
+    <li><a class="btn btn--primary" href="{{ site.baseurl }}/docs/CSLM_NeurIPS2026.pdf"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>论文（PDF）</a></li>
+    <li><a class="btn" href="https://github.com/joannacyang/cslm_mini"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg>代码</a></li>
+    <li><a class="btn" href="#cite"><svg class="icon" aria-hidden="true"><use href="#i-bookmark"/></svg>BibTeX</a></li>
+    <li><span class="btn btn--soon" aria-disabled="true"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>会议版本 · <em>即将发布</em></span></li>
+  </ul>
+</header>
+
+<div class="claim">
+  <p><strong>我们的立场。</strong>语言模型正在成为新的通用计算机，却几乎打破了经典计算机科学的每一条假设。我们能构建越来越强的模型，却无法从第一性原理出发预测它们的行为、解释它们的局限、指导它们的发展。语言模型需要属于自己的理论：<strong>语言模型的计算机科学（CSLM）</strong>，其基础是 <strong>token 复杂度</strong>。</p>
+</div>
+
+<ol class="pillars">
+  <li>
+    <a href="#differences">
+      <svg class="icon pillars__icon" aria-hidden="true"><use href="#i-help"/></svg><span class="pillars__q">为什么</span>
+      <b>七个根本差异</b>
+      <span>语言模型不仅求解和验证问题，还能提出问题；它以 token 为计算单位，并且只能以一定概率成功。</span>
+    </a>
+  </li>
+  <li>
+    <a href="#token-complexity">
+      <svg class="icon pillars__icon" aria-hidden="true"><use href="#i-activity"/></svg><span class="pillars__q">怎么做</span>
+      <b>Token 复杂度</b>
+      <span>用 token 数与成功率之间的曲线刻画语言模型系统，并在此基础上定义 LM-P、LM-NP 和 LM-Complete。</span>
+    </a>
+  </li>
+  <li>
+    <a href="#roadmap">
+      <svg class="icon pillars__icon" aria-hidden="true"><use href="#i-map"/></svg><span class="pillars__q">下一步</span>
+      <b>2026–2030 路线图</b>
+      <span>从统一定义，到 LM-complete 问题，再到 token 复杂度的 scaling law。</span>
+    </a>
+  </li>
+</ol>
+
+<!-- ============================================================ -->
+<h2 id="differences"><span class="no">01</span><span>为什么需要新的计算机科学：七个差异</span></h2>
+
+<p class="lead">语言模型改变了经典计算的三个基本假设：计算的是什么、以什么为单位、有多可靠。</p>
+
+<p class="group-label">计算模型本身</p>
+<ol class="diff-cards diff-cards--core">
+  <li><svg class="icon diff-cards__icon" aria-hidden="true"><use href="#i-cycle"/></svg><b>提出–求解–验证三元组</b>
+    <span>经典理论比较的是<em>求解</em>与<em>验证</em>的难度（P vs. NP）。语言模型还能通过猜想和自我博弈<em>提出</em>新问题，因此“提出问题”的代价同样值得研究。</span></li>
+  <li><svg class="icon diff-cards__icon" aria-hidden="true"><use href="#i-hash"/></svg><b>Token 是基本操作</b>
+    <span>计算的单位是 token，而不是算术操作。不同模型解同一问题所需的 token 数不同，而 token 数直接决定成本和延迟。</span></li>
+  <li><svg class="icon diff-cards__icon" aria-hidden="true"><use href="#i-alert"/></svg><b>推理不可靠</b>
+    <span>即使提示正确，语言模型也会产生幻觉，且其错误不服从任何固定的噪声模型。正确性变成了概率，验证因此更重要，也更困难。</span></li>
+</ol>
+
+<p class="group-label">影响 token 复杂度的系统性质</p>
+<ol class="diff-cards diff-cards--more">
+  <li><svg class="icon diff-cards__icon" aria-hidden="true"><use href="#i-image"/></svg><b>原生多模态</b>
+    <span>图像、音频和视频与文本进入同一个 token 流，按同样的方式计费。</span></li>
+  <li><svg class="icon diff-cards__icon" aria-hidden="true"><use href="#i-layers"/></svg><b>通用能力</b>
+    <span>一个模型在不同任务上运行它从数据中学到的多种“算法”。</span></li>
+  <li><svg class="icon diff-cards__icon" aria-hidden="true"><use href="#i-repeat"/></svg><b>训练–推理两阶段</b>
+    <span>训练 token 改写的是程序本身，从而改变固定问题的推理代价。</span></li>
+  <li><svg class="icon diff-cards__icon" aria-hidden="true"><use href="#i-book"/></svg><b>内含知识</b>
+    <span>存储在权重中的知识可能帮助推理，也可能误导推理。</span></li>
+</ol>
+
+<div class="def">
+  <span class="def__label">定义 · CSLM</span>
+  <p>语言模型的计算机科学（CSLM）是理解语言模型计算的理论与实证框架，涵盖复杂度分析、算法行为、可靠性，以及模型架构、训练过程和问题求解能力在不同模态与任务之间的关系。与量子复杂度理论类似，它是对经典理论的<em>扩展</em>，而非否定。</p>
+</div>
+
+<details class="compare">
+  <summary>对照：传统计算机科学 vs. CSLM</summary>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>维度</th><th>传统计算机科学</th><th>语言模型的计算机科学</th></tr>
+      </thead>
+      <tbody>
+        <tr><th>范式</th><td>求解–验证二分</td><td>提出–求解–验证三元组</td></tr>
+        <tr><th>基本单位</th><td>计算操作</td><td>Token</td></tr>
+        <tr><th>可靠性</th><td>确定性，程序正确则结果正确</td><td>概率性，可能产生幻觉</td></tr>
+        <tr><th>模态</th><td>比特与数值；处理像素但不理解概念</td><td>原生多模态理解</td></tr>
+        <tr><th>适用范围</th><td>针对特定问题的算法</td><td>通用模型</td></tr>
+        <tr><th>生命周期</th><td>只有推理</td><td>训练 + 推理</td></tr>
+        <tr><th>知识</th><td>运行时与数据无关</td><td>知识编码在参数中</td></tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+<!-- ============================================================ -->
+<h2 id="token-complexity"><span class="no">02</span><span>核心概念：Token 复杂度</span></h2>
+
+<p class="lead">用“达到每个成功率需要多少 token”来刻画语言模型系统。目标是：用更少的 token 正确完成任务。</p>
+
+<dl class="terms">
+  <div><dt><var>𝓜</var> · 系统</dt><dd>一个或多个语言模型，连同它们的分词器和推理过程（解码、采样、测试时扩展）。</dd></div>
+  <div><dt><var>I</var> · 实例</dt><dd>规模为 <var>n</var> = |<var>I</var>| 的问题实例，例如一个待排序的列表或一个 SAT 公式。</dd></div>
+  <div><dt><var>τ</var> · Token 数</dt><dd>系统在 <var>I</var> 上消耗的输入和输出 token。</dd></div>
+  <div><dt><var>p</var> · 成功率</dt><dd>在多次独立运行中，输出被验收标准 Ω（精确匹配、Lean、评分细则、LLM 评审）接受的比例。</dd></div>
+</dl>
+
+<div class="def def--key">
+  <span class="def__label">定义 · Token 复杂度</span>
+  <p>Token 复杂度是一条<em>曲线</em>，而不是一个数：它给出达到每个成功率所需的最少输入和输出 token。</p>
+  <span class="eq">TokC(I, 𝓜) = { ( τ<sup>in</sup>(I, 𝓜, p), τ<sup>out</sup>(I, 𝓜, p) ) : p ∈ [0, 1] }</span>
+</div>
+
+<figure class="figure">
+  <div class="figure__frame figure__frame--plain">
+    <svg class="tc-chart" viewBox="0 0 560 290" role="img" aria-labelledby="tc-chart-title">
+      <title id="tc-chart-title">两个系统的 token 复杂度曲线：A 用更少的 token 达到目标成功率，B 需要更多 token 但上限更高</title>
+      <line class="axis" x1="70" y1="250" x2="525" y2="250" />
+      <line class="axis" x1="70" y1="250" x2="70" y2="40" />
+      <text x="62" y="54" text-anchor="end">1</text>
+      <text x="62" y="254" text-anchor="end">0</text>
+      <text x="525" y="282" text-anchor="end">token 数 τ →</text>
+      <text x="20" y="150" text-anchor="middle" transform="rotate(-90 20 150)">成功率 p</text>
+      <line class="guide" x1="70" y1="100" x2="520" y2="100" />
+      <text class="pstar" x="62" y="104" text-anchor="end">p*</text>
+      <line class="guide" x1="194" y1="100" x2="194" y2="250" />
+      <line class="guide" x1="309" y1="100" x2="309" y2="250" />
+      <text class="lab-a" x="194" y="268" text-anchor="middle">τ<tspan dy="4" font-size="10">A</tspan></text>
+      <text class="lab-b" x="309" y="268" text-anchor="middle">τ<tspan dy="4" font-size="10">B</tspan></text>
+      <path class="curve-b" d="M70,250 L81,237 L92,226 L103,214 L114,204 L125,194 L136,185 L147,177 L158,169 L169,162 L180,155 L191,148 L202,142 L213,136 L224,131 L235,126 L246,121 L257,117 L268,113 L279,109 L290,106 L301,102 L312,99 L323,96 L334,94 L345,91 L356,89 L367,86 L378,84 L389,82 L400,81 L411,79 L422,77 L433,76 L444,74 L455,73 L466,72 L477,71 L488,70 L499,69 L510,68" />
+      <path class="curve-a" d="M70,250 L81,221 L92,198 L103,178 L114,161 L125,147 L136,136 L147,126 L158,118 L169,111 L180,106 L191,101 L202,97 L213,94 L224,91 L235,89 L246,87 L257,86 L268,85 L279,83 L290,83 L301,82 L312,81 L323,81 L334,80 L345,80 L356,80 L367,79 L378,79 L389,79 L400,79 L411,79 L422,79 L433,78 L444,78 L455,78 L466,78 L477,78 L488,78 L499,78 L510,78" />
+      <circle class="dot-a" cx="194" cy="100" r="4.5" />
+      <circle class="dot-b" cx="309" cy="100" r="4.5" />
+      <text class="lab-a" x="140" y="112" text-anchor="end">系统 A</text>
+      <text class="lab-b" x="330" y="128">系统 B</text>
+    </svg>
+  </div>
+  <figcaption>示意图。在目标成功率 p* 下，系统 A 需要 τ<sub>A</sub> 个 token，系统 B 需要更多，但 B 的上限更高。单一的准确率或 token 数都无法表达这种权衡。</figcaption>
+</figure>
+
+<div class="def-grid">
+  <div class="def">
+    <span class="def__label">系统画像与问题画像</span>
+    <p><b>SP(𝓜)</b> 汇集一个系统在所有问题上的曲线。<b>PP(P)</b> 汇集一个问题在所有系统上的曲线，因此使用不同分词器的系统无需换算到统一单位即可比较。</p>
+  </div>
+  <div class="def">
+    <span class="def__label">渐近 token 复杂度</span>
+    <p>若对所有足够大的实例都有 τ<sup>out</sup> ≤ C·f(|I|)，则称 𝓜 以成功率 <var>p*</var> 用 <b>O(f(n))</b> 个 token 求解 <var>P</var>。</p>
+  </div>
+  <div class="def">
+    <span class="def__label">LM-P 与 LM-NP</span>
+    <p><b>LM-P</b>：语言模型系统能以 poly(|I|) 个 token、不低于 <var>p*</var> 的成功率求解的问题。<b>LM-NP</b>：解能用 poly(|I|) 个 token 验证的问题。与 BPP 类似，两者都由固定阈值 <var>p*</var> 定义。</p>
+  </div>
+  <div class="def">
+    <span class="def__label">LM-Complete 与归约</span>
+    <p>若 LM-NP 中的每个问题都能以 token 高效的方式归约到某个 LM-NP 问题，即用 poly(|I<sub>A</sub>|) 个 token 实现 A ≤<sub>T</sub> B，则该问题为 <b>LM-Complete</b>。LM-P = LM-NP 吗？</p>
+  </div>
+</div>
+
+<h3>为什么用 token，而不是 FLOPs？</h3>
+<div class="card-grid card-grid--3">
+  <div class="card">
+    <span class="card__tag"><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg>可获取</span>
+    <p>FLOPs 只能在开源模型上测量；token 用量则可以通过 API 在任何模型上观测。</p>
+  </div>
+  <div class="card">
+    <span class="card__tag"><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg>有结构</span>
+    <p>Token 轨迹记录了模型如何分解问题、回溯和展开，而不只是做了多少算术。</p>
+  </div>
+  <div class="card">
+    <span class="card__tag"><svg class="icon" aria-hidden="true"><use href="#i-anchor"/></svg>稳定</span>
+    <p>每个 token 的 FLOPs 会随投机解码和量化而变化，token 数则不会，并且直接决定延迟和成本。</p>
+  </div>
+</div>
+<p>
+  每个 token 的 FLOPs 有上界，因此 token 复杂度仍能与经典复杂度界联系起来。<strong>Token–操作比</strong>
+  ρ(n) = τ<sup>out</sup>(n) / T<sub>P</sub>(n)（排序问题中即 τ<sup>out</sup> / (n log n)）反映了随着问题规模增大，语言模型与最优算法之间的差距是保持不变还是不断扩大。
+</p>
+
+<h3>分词器不同，结论会变吗？</h3>
+<p>
+  分词器是系统的一部分，所以对任何固定的系统，token 复杂度都有明确定义。在字节级分词器之间切换，token 数最多相差一个常数倍，这个常数被大 O 吸收：指数不变，复杂度类也就与分词器无关。在英文文本上，八个广泛使用的分词器（从 GPT-2 到 Gemma-2，词表大小 32K–256K）给出的 token 数相差不超过 <strong>1.13 倍</strong>。
+</p>
+
+<h3 id="evidence">初步测量：排序</h3>
+
+<p>
+  即使在排序这样简单的问题上，两个模型的曲线也明显不同。我们测量了 gpt-5-mini 和 gpt-5-nano 在排序问题上的 token 复杂度（n = 120，30 个实例），每个实例最多独立尝试 16 次，以精确匹配判定成功。
+</p>
+
+<figure class="figure">
+  <div class="figure__frame">
+    <img src="{{ site.baseurl }}/assets/sorting.png" alt="gpt-5-mini 和 gpt-5-nano 在排序上的准确率–尝试次数、token–尝试次数以及准确率–token 曲线" width="1668" height="488" loading="lazy" />
+  </div>
+  <figcaption>左：准确率与尝试次数。中：token 数与尝试次数。右：token 复杂度曲线本身。</figcaption>
+</figure>
+
+<ul class="findings">
+  <li><b>这是一条曲线，而不是一个数。</b>两个模型都随着 token 投入增加而提高准确率，与推理 scaling law p ∼ (τ<sup>out</sup>)<sup>β</sup> 一致。</li>
+  <li><b>不同模型落在 (τ, p) 空间的不同区域。</b>gpt-5-mini 在三次尝试内达到约 87%，随后稳定在 90%；gpt-5-nano 在 16 次尝试时达到 93.3%，但消耗的 token 接近前者的三倍。</li>
+  <li><b>单一准确率掩盖了这一点。</b>哪个模型“更好”取决于 token 预算，而这正是问题画像 PP(P) 所记录的。</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2 id="connections"><span class="no">03</span><span>与现有研究的联系</span></h2>
+
+<p class="lead">Scaling law、记忆、工具、多智能体和微调，都可以归结为同一条曲线上的问题：它们如何改变 token 数和成功率。</p>
+
+<figure class="figure">
+  <div class="figure__frame">
+    <img src="{{ site.baseurl }}/assets/connections.png" alt="CSLM 与现有计算机科学及大模型研究的联系" width="1410" height="521" />
+  </div>
+  <figcaption>左：与经典计算机科学的联系。右：与大模型研究的联系。</figcaption>
+</figure>
+
+<div class="card-grid">
+  <div class="card">
+    <span class="card__tag"><svg class="icon" aria-hidden="true"><use href="#i-trending"/></svg>Scaling law</span>
+    <p>关于 (N, D, C) 的训练 scaling law 可能推广到 token 复杂度。推理 scaling p ∼ (τ<sup>out</sup>)<sup>β</sup> 本身就是 token 与成功率之间的直接权衡。</p>
+  </div>
+  <div class="card">
+    <span class="card__tag"><svg class="icon" aria-hidden="true"><use href="#i-database"/></svg>记忆</span>
+    <p>上下文相当于缓存，检索相当于磁盘，而权重是经典体系中没有对应物的一层。比较 TokC(I, 𝓜) 与 TokC(I, 𝓜 ⊕ E)，并对每一层分别计费。</p>
+  </div>
+  <div class="card">
+    <span class="card__tag"><svg class="icon" aria-hidden="true"><use href="#i-tool"/></svg>工具</span>
+    <p>一次工具调用就是一次 oracle 查询：只有编排过程消耗 token。当 TokC<sub>create</sub> + Σ TokC(I<sub>i</sub>, 𝓜 ⊕ t) &lt; Σ TokC(I<sub>i</sub>, 𝓜) 时，构建工具是划算的。</p>
+  </div>
+  <div class="card">
+    <span class="card__tag"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>多智能体系统</span>
+    <p>系统级 token 复杂度取决于三点：任务如何拆分、每部分由哪个模型处理、智能体之间需要多少通信。</p>
+  </div>
+  <div class="card">
+    <span class="card__tag"><svg class="icon" aria-hidden="true"><use href="#i-sliders"/></svg>微调</span>
+    <p>训练 token 改写的是算法本身。把“让 𝓜 以成功率 <var>p</var> 求解 P′”视为一个实例，SFT、RL 和蒸馏的区别仅在于它们消耗的 token。</p>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="roadmap"><span class="no">04</span><span>开放问题与 2026–2030 路线图</span></h2>
+
+<p class="lead">经典复杂度理论从 Turing 到 Karp 走了四十年。我们提出一个五年路线图，让 CSLM 成为一门严谨的学科。</p>
+
+<p class="group-label">开放问题</p>
+<ol class="diff-cards diff-cards--core diff-cards--plain">
+  <li><svg class="icon diff-cards__icon" aria-hidden="true"><use href="#i-lock"/></svg><b>复杂度与困难性</b>
+    <span>语言模型中与 SAT 对应的问题是什么？是否存在求解需要指数级 token、验证只需多项式级 token 的问题？困难问题能否归约到少数几个 LM-complete 问题？</span></li>
+  <li><svg class="icon diff-cards__icon" aria-hidden="true"><use href="#i-zap"/></svg><b>训练动态</b>
+    <span>算力应如何分配，C = C<sub>train</sub> + C<sub>infer</sub>？通过 SFT 或 RL 微调学会一项新能力需要多少 token？</span></li>
+  <li><svg class="icon diff-cards__icon" aria-hidden="true"><use href="#i-box"/></svg><b>记忆、工具与智能体</b>
+    <span>如何衡量它们对 token 复杂度的贡献？什么时候扩大参数规模比给模型接入外部资源更好？</span></li>
+</ol>
+
+<p class="group-label">路线图</p>
+
+<ol class="timeline">
+  <li><span class="when">1936</span><div class="what"><b>Turing</b> · 图灵机</div></li>
+  <li><span class="when">1965</span><div class="what"><b>Edmonds</b> · P 类</div></li>
+  <li><span class="when">1971</span><div class="what"><b>Cook</b> · Cook–Levin 定理</div></li>
+  <li><span class="when">1972</span><div class="what"><b>Karp</b> · 21 个 NP 完全问题</div></li>
+  <li class="divider"><span></span><div class="what">语言模型的计算机科学</div></li>
+  <li class="is-future"><span class="when">2026</span><div class="what"><b>基础与形式化</b>
+    <p>就提示词、检索上下文和思维链中的 token 计数方式达成共识。确定 LM-P、LM-NP 和 LM-Complete 的定义。证明第一批下界，并发布带有渐近实例生成器的基准（排序、SAT、图着色、TSP、背包）。</p></div></li>
+  <li class="is-future"><span class="when">2027–28</span><div class="what"><b>分类与结构理论</b>
+    <p>找到 LM-complete 问题，或证明其不存在。建立覆盖 25 个以上问题类的归约框架。证明无条件下界，并将理论扩展到多模态输入和 RL 微调。</p></div></li>
+  <li class="is-future"><span class="when">2029–30</span><div class="what"><b>成熟与整合</b>
+    <p>解决或形式化刻画 LM-P vs. LM-NP 问题。刻画可靠性悬崖：达到 p = 0.99 所需的 token 比 p = 0.5 多出指数级。推导通用的 token 复杂度 scaling law，即 CSLM 的 Chinchilla 定律。发布 CSLM-Bench。</p></div></li>
+</ol>
+
+<!-- ============================================================ -->
+<h2 id="related-work"><span class="no">05</span><span>相关工作</span></h2>
+
+<p class="lead">已有多条研究路线把经典计算机科学引入语言模型，CSLM 在此基础上展开。</p>
+
+<div class="reading reading--cols">
+  <section>
+    <h3><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg>用 NP（完全）问题评测大模型</h3>
+    <p class="framing">复杂度类为基准提供了有原则的难度刻度，以及无限且可验证的实例。CSLM 关心的是这些基准应该报告什么：完整的 token 复杂度曲线，而不是单一准确率。</p>
+    <ul>
+      <li><a href="https://arxiv.org/abs/2312.14890">NPHardEval</a> <span>题目取自 P、NP 完全和 NP 难三类问题。</span></li>
+      <li><a href="https://arxiv.org/abs/2502.01100">ZebraLogic</a> <span>用 NP 完全的斑马谜题考察推理能力随难度的变化。</span></li>
+      <li><a href="https://github.com/SakanaAI/Sudoku-Bench">Sudoku-Bench</a> <span>2,765 道按难度分级、程序化生成的数独题。</span></li>
+      <li><a href="https://arxiv.org/abs/2505.24760">Reasoning Gym</a> <span>复杂度可调的程序化生成器与验证器。</span></li>
+      <li><a href="https://arxiv.org/abs/2504.11239">NPPC</a> <span>25 个 NP 完全问题，实例规模可持续增长（我们的工作）。</span></li>
+    </ul>
+  </section>
+  <section>
+    <h3><svg class="icon" aria-hidden="true"><use href="#i-target"/></svg>把 NP 问题用作训练环境</h3>
+    <p class="framing">可验证的困难问题正在成为强化学习环境。用 CSLM 的语言说，这类训练是花费 token 来移动模型的推理曲线。</p>
+    <ul>
+      <li><a href="https://arxiv.org/abs/2505.16368">SATURN</a> <span>基于 SAT 的强化学习，提升通用推理能力。</span></li>
+      <li><a href="https://arxiv.org/abs/2510.16476">NP-Engine</a> <span>10 个 NP 难任务，配有可控生成器和启发式求解器。</span></li>
+      <li><a href="https://arxiv.org/abs/2505.19641">SynLogic</a> <span>合成逻辑任务，其收益可迁移到数学推理。</span></li>
+      <li><a href="https://arxiv.org/abs/2511.07317">RLVE</a> <span>在强化学习中自适应调节难度的可验证环境。</span></li>
+      <li><a href="https://arxiv.org/abs/2601.04809">SCALER</a> <span>可扩展、难度自适应的合成环境。</span></li>
+    </ul>
+  </section>
+  <section>
+    <h3><svg class="icon" aria-hidden="true"><use href="#i-cpu"/></svg>对大模型的算法性理解</h3>
+    <p class="framing">表达能力理论和可解释性研究的是模型<em>能</em>运行哪些算法、<em>实际</em>运行了哪些算法。CSLM 补上的是运行这些算法要花多少 token。</p>
+    <ul>
+      <li><a href="https://jmlr.org/papers/v22/20-302.html">Attention is Turing-Complete</a> <span>Transformer 在原理上是通用的。</span></li>
+      <li><a href="https://arxiv.org/abs/2410.03170">Autoregressive Large Language Models are Computationally Universal</a> <span>仅靠自回归解码即可实现通用计算。</span></li>
+      <li><a href="https://arxiv.org/abs/2402.12875">Chain of Thought Empowers Transformers to Solve Inherently Serial Problems</a> <span>从电路复杂度角度看，CoT 提升了表达能力。</span></li>
+      <li><a href="https://arxiv.org/abs/2507.07544">Position: We Need an Algorithmic Understanding of Generative AI</a> <span>AlgEval：研究大模型学会并使用哪些算法的框架。</span></li>
+      <li><a href="https://arxiv.org/abs/2510.15987">AlgoTrace: Algorithmic Primitives and Compositional Geometry of Reasoning</a> <span>把推理轨迹与内部激活联系起来。</span></li>
+      <li><a href="https://transformer-circuits.pub/2025/attribution-graphs/methods.html">Circuit Tracing</a> 与 <a href="https://arxiv.org/abs/2407.10827">LLM Circuit Analyses Are Consistent Across Training and Scale</a> <span>追踪模型内部的计算过程。</span></li>
+    </ul>
+  </section>
+  <section>
+    <h3><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>互补的理论框架</h3>
+    <p class="framing">这些工作在其他层面研究语言模型。CSLM 把系统当作黑盒，关注 token 代价如何随问题规模变化，因此同样适用于开源和闭源模型。</p>
+    <ul>
+      <li><a href="https://arxiv.org/abs/2602.02909">BAPO bounds</a> <span>由 Transformer 带宽推出的思维链长度最坏情况下界，是 CSLM 所预言的下界的一个白盒实例。</span></li>
+      <li><a href="https://physics.allen-zhu.com/">Physics of Language Models</a> <span>从微观视角研究模型内部的知识存储与推理；CSLM 是宏观视角。</span></li>
+      <li>统计学习理论 <span>样本复杂度计算的是训练样本数，token 复杂度计算的是推理代价。</span></li>
+    </ul>
+  </section>
+  <section>
+    <h3><svg class="icon" aria-hidden="true"><use href="#i-trending"/></svg>Scaling law 与效率</h3>
+    <p class="framing">Scaling law 是 CSLM 的第一个成功案例。我们预期 token 复杂度也存在类似的规律，以及跨分词器成立的效率度量。</p>
+    <ul>
+      <li><a href="https://arxiv.org/abs/2001.08361">Scaling Laws for Neural Language Models</a> <span>损失随参数量、数据量和算力呈幂律下降。</span></li>
+      <li><a href="https://arxiv.org/abs/2203.15556">Training Compute-Optimal Large Language Models</a> <span>Chinchilla：参数量与训练 token 应同步扩展。</span></li>
+      <li><a href="https://arxiv.org/abs/2408.00724">Inference Scaling Laws</a> <span>token 与成功率关系的实证测量，正是 CSLM 形式化为 token 复杂度曲线的结构。</span></li>
+      <li><a href="https://www.nature.com/articles/s42256-025-01137-0">Densing Law of LLMs</a> <span>单位参数的能力随时间指数增长。</span></li>
+      <li><a href="https://arxiv.org/abs/2511.08066">Information Capacity</a> <span>以单位算力下的文本压缩能力衡量推理效率，可跨分词器比较。</span></li>
+    </ul>
+  </section>
+  <section>
+    <h3><svg class="icon" aria-hidden="true"><use href="#i-database"/></svg>记忆、工具与微调</h3>
+    <p class="framing">CSLM 通过比较 TokC(I, 𝓜) 与 TokC(I, 𝓜 ⊕ E) 或 TokC(I, 𝓜 ⊕ T) 来衡量每种增强的价值，并把训练 token 看作对算法的改写。</p>
+    <ul>
+      <li><a href="https://arxiv.org/abs/2505.24832">How Much Do Language Models Memorize?</a> <span>GPT 类模型每个参数约能存储 3.6 比特。</span></li>
+      <li><a href="https://arxiv.org/abs/2507.05578">The Landscape of Memorization in LLMs</a> <span>记忆现象的成因，以及检测与缓解方法。</span></li>
+      <li><a href="https://openreview.net/forum?id=jaoYoivyjD">Unveil the Duality of Retrieval-Augmented Generation</a> <span>检索到的文本何时帮助生成，何时反而有害。</span></li>
+      <li><a href="https://arxiv.org/abs/2508.19201">Understanding Tool-Integrated Reasoning</a> <span>工具严格扩展了模型能解决的问题范围。</span></li>
+      <li><a href="https://arxiv.org/abs/2510.18874">Retaining by Doing</a> <span>由于数据是 on-policy 的，RL 比 SFT 遗忘得更少。</span></li>
+    </ul>
+  </section>
+  <section>
+    <h3><svg class="icon" aria-hidden="true"><use href="#i-compass"/></svg>观点</h3>
+    <p class="framing">关于语言模型研究走向的更宏观的看法。</p>
+    <ul>
+      <li><a href="https://ysymyth.github.io/The-Second-Half/">The Second Half</a> <span>AI 的重心正从训练方法转向定义问题与评测。</span></li>
+      <li><a href="https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf">Welcome to the Era of Experience</a> <span>智能体将主要从自身经验中学习，而非人类数据。</span></li>
+    </ul>
+  </section>
+</div>
+
+<h3 id="our-work" class="subsection"><svg class="icon" aria-hidden="true"><use href="#i-award"/></svg>我们的工作</h3>
+
+<div class="card-grid">
+  <a class="card" href="{{ site.baseurl }}/docs/CSLM_NeurIPS2026.pdf">
+    <span class="card__tag">NeurIPS · 2026</span>
+    <h3>Language Models Demand New Computer Science</h3>
+    <p>七个根本差异、token 复杂度，以及 CSLM 的五年路线图。立场论文（Position Paper Track）。</p>
+  </a>
+  <a class="card" href="https://openreview.net/forum?id=Xb6d5lGLb2">
+    <span class="card__tag">TMLR · 2026</span>
+    <h3>NPPC: an Ever-Scaling Reasoning Benchmark</h3>
+    <p>Nondeterministic Polynomial-time Problem Challenge：难度可持续提升、实例无限生成，且易于验证。</p>
+  </a>
+</div>
+
+<figure class="figure">
+  <div class="figure__frame">
+    <img src="{{ site.baseurl }}/assets/nppc.svg" alt="NPPC 基准概览" width="4272" height="1925" loading="lazy" />
+  </div>
+  <figcaption>NPPC：基于 NP 完全问题、规模可持续增长的基准（<a href="https://arxiv.org/abs/2504.11239">arXiv</a>）。</figcaption>
+</figure>
+
+<!-- ============================================================ -->
+<h2 id="cite"><svg class="icon h2-icon" aria-hidden="true"><use href="#i-bookmark"/></svg><span>引用与联系</span></h2>
+
+<pre class="bibtex"><code>@inproceedings{yang2026cslm,
+  title     = {Language Models Demand New Computer Science},
+  author    = {Yang, Chang and Wang, Xinrun and Li, Shuxin and Zhang, Qinggang and
+               Zhou, Huachi and Lin, Zhuoyi and Li, Bo and Huang, Xiao},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS), Position Paper Track},
+  year      = {2026}
+}</code></pre>
+
+<p>
+  让我们一起构建语言模型的计算机科学。欢迎交流与合作：Chang Yang（<a href="mailto:chang.yang@connect.polyu.hk">chang.yang@connect.polyu.hk</a>）和Xinrun Wang（<a href="mailto:xrwang@smu.edu.sg">xrwang@smu.edu.sg</a>）。
+</p>

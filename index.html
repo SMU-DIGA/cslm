@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Home
+lang: en
 description: "NeurIPS 2026 position paper. Language models are the new universal computer. They demand their own computer science, built on token complexity."
 ---
 
@@ -19,9 +20,10 @@ description: "NeurIPS 2026 position paper. Language models are the new universal
   </p>
 
   <ul class="actions">
-    <li><a class="btn btn--primary" href="{{ site.baseurl }}/docs/CSLM_NeurIPS2026.pdf">Paper (PDF)</a></li>
-    <li><a class="btn" href="https://github.com/joannacyang/cslm_mini">Code</a></li>
-    <li><a class="btn" href="#cite">BibTeX</a></li>
+    <li><a class="btn btn--primary" href="{{ site.baseurl }}/docs/CSLM_NeurIPS2026.pdf"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>Paper (PDF)</a></li>
+    <li><a class="btn" href="https://github.com/joannacyang/cslm_mini"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg>Code</a></li>
+    <li><a class="btn" href="#cite"><svg class="icon" aria-hidden="true"><use href="#i-bookmark"/></svg>BibTeX</a></li>
+    <li><span class="btn btn--soon" aria-disabled="true"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>Conference Version · <em>Coming Soon</em></span></li>
   </ul>
 </header>
 
@@ -35,21 +37,21 @@ description: "NeurIPS 2026 position paper. Language models are the new universal
 <ol class="pillars">
   <li>
     <a href="#differences">
-      <span class="pillars__q">Why</span>
+      <svg class="icon pillars__icon" aria-hidden="true"><use href="#i-help"/></svg><span class="pillars__q">Why</span>
       <b>Seven fundamental differences</b>
       <span>LMs propose problems as well as solve and verify them, compute in tokens, and succeed only with some probability.</span>
     </a>
   </li>
   <li>
     <a href="#token-complexity">
-      <span class="pillars__q">How</span>
+      <svg class="icon pillars__icon" aria-hidden="true"><use href="#i-activity"/></svg><span class="pillars__q">How</span>
       <b>Token complexity</b>
       <span>Measure an LM system by its curve of tokens against success rate, and build LM-P, LM-NP and LM-Complete on it.</span>
     </a>
   </li>
   <li>
     <a href="#roadmap">
-      <span class="pillars__q">What next</span>
+      <svg class="icon pillars__icon" aria-hidden="true"><use href="#i-map"/></svg><span class="pillars__q">What next</span>
       <b>Roadmap 2026–2030</b>
       <span>From shared definitions, to LM-complete problems, to a scaling law for token complexity.</span>
     </a>
@@ -63,23 +65,23 @@ description: "NeurIPS 2026 position paper. Language models are the new universal
 
 <p class="group-label">The computational model</p>
 <ol class="diff-cards diff-cards--core">
-  <li><b>Propose–solve–verify triad</b>
+  <li><svg class="icon diff-cards__icon" aria-hidden="true"><use href="#i-cycle"/></svg><b>Propose–solve–verify triad</b>
     <span>Classical theory compares <em>solving</em> with <em>verifying</em> (P vs. NP). LMs also <em>propose</em> new problems, through conjectures and self-play, so proposal has a cost that can be studied too.</span></li>
-  <li><b>Token as the basic operation</b>
+  <li><svg class="icon diff-cards__icon" aria-hidden="true"><use href="#i-hash"/></svg><b>Token as the basic operation</b>
     <span>The unit of computation is the token, not the arithmetic operation. Models differ in how many tokens a problem takes, and token count sets cost and latency.</span></li>
-  <li><b>Unreliable reasoning</b>
+  <li><svg class="icon diff-cards__icon" aria-hidden="true"><use href="#i-alert"/></svg><b>Unreliable reasoning</b>
     <span>LMs hallucinate even when prompted correctly, and their errors fit no fixed noise model. Correctness is a probability, so verification matters more and is harder.</span></li>
 </ol>
 
 <p class="group-label">Properties that shape token complexity</p>
 <ol class="diff-cards diff-cards--more">
-  <li><b>Native multimodality</b>
+  <li><svg class="icon diff-cards__icon" aria-hidden="true"><use href="#i-image"/></svg><b>Native multimodality</b>
     <span>Images, audio and video enter the same token stream as text, at the same cost.</span></li>
-  <li><b>General-purpose capabilities</b>
+  <li><svg class="icon diff-cards__icon" aria-hidden="true"><use href="#i-layers"/></svg><b>General-purpose capabilities</b>
     <span>One model runs many "algorithms" it learned from data, across tasks.</span></li>
-  <li><b>Training–inference stages</b>
+  <li><svg class="icon diff-cards__icon" aria-hidden="true"><use href="#i-repeat"/></svg><b>Training–inference stages</b>
     <span>Training tokens rewrite the program, changing the inference cost of a fixed problem.</span></li>
-  <li><b>Inherent knowledge</b>
+  <li><svg class="icon diff-cards__icon" aria-hidden="true"><use href="#i-book"/></svg><b>Inherent knowledge</b>
     <span>Knowledge stored in the weights can help reasoning, or mislead it.</span></li>
 </ol>
 
@@ -180,15 +182,15 @@ description: "NeurIPS 2026 position paper. Language models are the new universal
 <h3>Why tokens, and not FLOPs?</h3>
 <div class="card-grid card-grid--3">
   <div class="card">
-    <span class="card__tag">Access</span>
+    <span class="card__tag"><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg>Access</span>
     <p>FLOPs can only be measured for open models. Token usage is observable for any model through its API.</p>
   </div>
   <div class="card">
-    <span class="card__tag">Structure</span>
+    <span class="card__tag"><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg>Structure</span>
     <p>A token trace records how a model breaks a problem down, backtracks and elaborates, not just how much arithmetic it does.</p>
   </div>
   <div class="card">
-    <span class="card__tag">Stability</span>
+    <span class="card__tag"><svg class="icon" aria-hidden="true"><use href="#i-anchor"/></svg>Stability</span>
     <p>FLOPs per token change with speculative decoding and quantization. Token count does not, and it sets latency and cost directly.</p>
   </div>
 </div>
@@ -216,7 +218,7 @@ description: "NeurIPS 2026 position paper. Language models are the new universal
 
 <figure class="figure">
   <div class="figure__frame">
-    <img src="{{ site.baseurl }}/assets/sorting.png" alt="Accuracy vs. trials, tokens vs. trials, and accuracy vs. tokens for gpt-5-mini and gpt-5-nano on sorting" width="1668" loading="lazy" />
+    <img src="{{ site.baseurl }}/assets/sorting.png" alt="Accuracy vs. trials, tokens vs. trials, and accuracy vs. tokens for gpt-5-mini and gpt-5-nano on sorting" width="1668" height="488" loading="lazy" />
   </div>
   <figcaption>Left: accuracy vs. trials. Middle: tokens vs. trials. Right: the token complexity curve itself.</figcaption>
 </figure>
@@ -234,30 +236,30 @@ description: "NeurIPS 2026 position paper. Language models are the new universal
 
 <figure class="figure">
   <div class="figure__frame">
-    <img src="{{ site.baseurl }}/assets/connections.png" alt="Connections between CSLM and existing CS and LLM research" width="1400" />
+    <img src="{{ site.baseurl }}/assets/connections.png" alt="Connections between CSLM and existing CS and LLM research" width="1410" height="521" />
   </div>
   <figcaption>Left: links to classical CS. Right: links to LLM research.</figcaption>
 </figure>
 
 <div class="card-grid">
   <div class="card">
-    <span class="card__tag">Scaling laws</span>
+    <span class="card__tag"><svg class="icon" aria-hidden="true"><use href="#i-trending"/></svg>Scaling laws</span>
     <p>Training laws over (N, D, C) may carry over to token complexity. Inference scaling, p ∼ (τ<sup>out</sup>)<sup>β</sup>, is a direct trade-off between tokens and success rate.</p>
   </div>
   <div class="card">
-    <span class="card__tag">Memory</span>
+    <span class="card__tag"><svg class="icon" aria-hidden="true"><use href="#i-database"/></svg>Memory</span>
     <p>Context is the cache, retrieval is the disk, and weights are a tier with no classical counterpart. Compare TokC(I, 𝓜) with TokC(I, 𝓜 ⊕ E) and charge each tier separately.</p>
   </div>
   <div class="card">
-    <span class="card__tag">Tools</span>
+    <span class="card__tag"><svg class="icon" aria-hidden="true"><use href="#i-tool"/></svg>Tools</span>
     <p>A tool call is an oracle query: only the orchestration costs tokens. Building a tool pays off when TokC<sub>create</sub> + Σ TokC(I<sub>i</sub>, 𝓜 ⊕ t) &lt; Σ TokC(I<sub>i</sub>, 𝓜).</p>
   </div>
   <div class="card">
-    <span class="card__tag">Multi-agent systems</span>
+    <span class="card__tag"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>Multi-agent systems</span>
     <p>System-level token complexity depends on three things: how the task is split, which model handles each part, and how much the agents need to communicate.</p>
   </div>
   <div class="card">
-    <span class="card__tag">Fine-tuning</span>
+    <span class="card__tag"><svg class="icon" aria-hidden="true"><use href="#i-sliders"/></svg>Fine-tuning</span>
     <p>Training tokens rewrite the algorithm. Treat "make 𝓜 solve P′ with success rate <var>p</var>" as the instance, and SFT, RL and distillation differ only in the tokens they spend.</p>
   </div>
 </div>
@@ -269,11 +271,11 @@ description: "NeurIPS 2026 position paper. Language models are the new universal
 
 <p class="group-label">Open questions</p>
 <ol class="diff-cards diff-cards--core diff-cards--plain">
-  <li><b>Complexity and hardness</b>
+  <li><svg class="icon diff-cards__icon" aria-hidden="true"><use href="#i-lock"/></svg><b>Complexity and hardness</b>
     <span>What is the LM analogue of SAT? Are there problems that need exponentially many tokens to solve but only polynomially many to verify? Can hard problems be reduced to a few LM-complete ones?</span></li>
-  <li><b>Training dynamics</b>
+  <li><svg class="icon diff-cards__icon" aria-hidden="true"><use href="#i-zap"/></svg><b>Training dynamics</b>
     <span>How should compute be split, C = C<sub>train</sub> + C<sub>infer</sub>? How many tokens does it take to learn a new capability through SFT or RL fine-tuning?</span></li>
-  <li><b>Memory, tools and agents</b>
+  <li><svg class="icon diff-cards__icon" aria-hidden="true"><use href="#i-box"/></svg><b>Memory, tools and agents</b>
     <span>How do we measure what these add to token complexity? When is it better to scale up parameters than to give a model external resources?</span></li>
 </ol>
 
@@ -300,7 +302,7 @@ description: "NeurIPS 2026 position paper. Language models are the new universal
 
 <div class="reading reading--cols">
   <section>
-    <h3>Benchmarking LLMs on NP(-complete) problems</h3>
+    <h3><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg>Benchmarking LLMs on NP(-complete) problems</h3>
     <p class="framing">Complexity classes give benchmarks a principled difficulty scale and unlimited, verifiable instances. CSLM asks what these benchmarks should report: the full token complexity curve rather than a single accuracy.</p>
     <ul>
       <li><a href="https://arxiv.org/abs/2312.14890">NPHardEval</a> <span>Problems drawn from P, NP-complete and NP-hard.</span></li>
@@ -311,7 +313,7 @@ description: "NeurIPS 2026 position paper. Language models are the new universal
     </ul>
   </section>
   <section>
-    <h3>NP problems as training environments</h3>
+    <h3><svg class="icon" aria-hidden="true"><use href="#i-target"/></svg>NP problems as training environments</h3>
     <p class="framing">Verifiable hard problems are becoming RL environments. In CSLM terms, this training spends tokens to shift a model's inference curve.</p>
     <ul>
       <li><a href="https://arxiv.org/abs/2505.16368">SATURN</a> <span>SAT-based RL to improve general reasoning.</span></li>
@@ -322,7 +324,7 @@ description: "NeurIPS 2026 position paper. Language models are the new universal
     </ul>
   </section>
   <section>
-    <h3>Algorithmic understanding of LLMs</h3>
+    <h3><svg class="icon" aria-hidden="true"><use href="#i-cpu"/></svg>Algorithmic understanding of LLMs</h3>
     <p class="framing">Expressivity results and interpretability ask which algorithms a model <em>can</em> run and <em>does</em> run. CSLM adds how many tokens running them costs.</p>
     <ul>
       <li><a href="https://jmlr.org/papers/v22/20-302.html">Attention is Turing-Complete</a> <span>Transformers are universal in principle.</span></li>
@@ -334,7 +336,7 @@ description: "NeurIPS 2026 position paper. Language models are the new universal
     </ul>
   </section>
   <section>
-    <h3>Complementary frameworks</h3>
+    <h3><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>Complementary frameworks</h3>
     <p class="framing">These study LMs at other levels. CSLM treats the system as a black box and asks how its token cost scales with the problem, so it applies to open and closed models alike.</p>
     <ul>
       <li><a href="https://arxiv.org/abs/2602.02909">BAPO bounds</a> <span>Worst-case lower bounds on chain-of-thought length from transformer bandwidth. A white-box instance of the lower bounds CSLM predicts.</span></li>
@@ -343,7 +345,7 @@ description: "NeurIPS 2026 position paper. Language models are the new universal
     </ul>
   </section>
   <section>
-    <h3>Scaling laws and efficiency</h3>
+    <h3><svg class="icon" aria-hidden="true"><use href="#i-trending"/></svg>Scaling laws and efficiency</h3>
     <p class="framing">Scaling laws are the first success story of CSLM. We expect analogous laws for token complexity, and efficiency measures that hold across tokenizers.</p>
     <ul>
       <li><a href="https://arxiv.org/abs/2001.08361">Scaling Laws for Neural Language Models</a> <span>Loss follows power laws in parameters, data and compute.</span></li>
@@ -354,7 +356,7 @@ description: "NeurIPS 2026 position paper. Language models are the new universal
     </ul>
   </section>
   <section>
-    <h3>Memory, tools and fine-tuning</h3>
+    <h3><svg class="icon" aria-hidden="true"><use href="#i-database"/></svg>Memory, tools and fine-tuning</h3>
     <p class="framing">CSLM measures what each addition is worth by comparing TokC(I, 𝓜) with TokC(I, 𝓜 ⊕ E) or TokC(I, 𝓜 ⊕ T), and treats training tokens as rewriting the algorithm.</p>
     <ul>
       <li><a href="https://arxiv.org/abs/2505.24832">How Much Do Language Models Memorize?</a> <span>GPT-style models store about 3.6 bits per parameter.</span></li>
@@ -365,7 +367,7 @@ description: "NeurIPS 2026 position paper. Language models are the new universal
     </ul>
   </section>
   <section>
-    <h3>Perspectives</h3>
+    <h3><svg class="icon" aria-hidden="true"><use href="#i-compass"/></svg>Perspectives</h3>
     <p class="framing">Broader views on where language model research is heading.</p>
     <ul>
       <li><a href="https://ysymyth.github.io/The-Second-Half/">The Second Half</a> <span>The focus of AI shifts from training methods to defining problems and evaluation.</span></li>
@@ -374,7 +376,7 @@ description: "NeurIPS 2026 position paper. Language models are the new universal
   </section>
 </div>
 
-<h3 id="our-work" class="subsection">Our work</h3>
+<h3 id="our-work" class="subsection"><svg class="icon" aria-hidden="true"><use href="#i-award"/></svg>Our work</h3>
 
 <div class="card-grid">
   <a class="card" href="{{ site.baseurl }}/docs/CSLM_NeurIPS2026.pdf">
@@ -391,13 +393,13 @@ description: "NeurIPS 2026 position paper. Language models are the new universal
 
 <figure class="figure">
   <div class="figure__frame">
-    <img src="{{ site.baseurl }}/assets/nppc.svg" alt="Overview of the NPPC benchmark" loading="lazy" />
+    <img src="{{ site.baseurl }}/assets/nppc.svg" alt="Overview of the NPPC benchmark" width="4272" height="1925" loading="lazy" />
   </div>
   <figcaption>NPPC: an ever-scaling benchmark built on NP-complete problems (<a href="https://arxiv.org/abs/2504.11239">arXiv</a>).</figcaption>
 </figure>
 
 <!-- ============================================================ -->
-<h2 id="cite"><span>Cite &amp; Contact</span></h2>
+<h2 id="cite"><svg class="icon h2-icon" aria-hidden="true"><use href="#i-bookmark"/></svg><span>Cite &amp; Contact</span></h2>
 
 <pre class="bibtex"><code>@inproceedings{yang2026cslm,
   title     = {Language Models Demand New Computer Science},
