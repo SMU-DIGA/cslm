@@ -70,6 +70,26 @@
   links.addEventListener('click', function (e) {
     if (e.target.tagName === 'A') links.classList.remove('is-open');
   });
+
+  // Highlight the nav link of the section currently in view.
+  var navById = {};
+  links.querySelectorAll('a[href*="#"]').forEach(function (a) {
+    navById[a.getAttribute('href').split('#')[1]] = a;
+  });
+  var heads = Array.prototype.filter.call(document.querySelectorAll('.content h2[id]'), function (h) { return navById[h.id]; });
+  if (heads.length) {
+    var current = null;
+    function setActive() {
+      var active = null;
+      heads.forEach(function (h) { if (h.getBoundingClientRect().top < 140) active = h; });
+      if (active === current) return;
+      if (current) navById[current.id].classList.remove('is-active');
+      if (active) navById[active.id].classList.add('is-active');
+      current = active;
+    }
+    window.addEventListener('scroll', setActive, { passive: true });
+    setActive();
+  }
 })();
 </script>
 </body>

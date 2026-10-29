@@ -18,6 +18,7 @@
   --highlight: #8a3324;
   --highlight-soft: #efe2ce;
   --figure-bg: #ffffff;
+  --series-b: #3e6a8a;
   --grain: .05;
   --shadow: 0 1px 2px rgba(60, 47, 33, .06), 0 6px 20px rgba(60, 47, 33, .05);
   --radius: 8px;
@@ -43,6 +44,7 @@ html[data-theme="dark"] {
   --highlight: #e5876a;
   --highlight-soft: #3a2520;
   --figure-bg: #f4f2ec;
+  --series-b: #8db6d4;
   --grain: .045;
   --shadow: 0 1px 2px rgba(0, 0, 0, .35), 0 6px 20px rgba(0, 0, 0, .28);
 }
@@ -144,6 +146,7 @@ img { max-width: 100%; height: auto; }
 }
 .nav-links a:hover { background: var(--bg-soft); color: var(--text); text-decoration: none; }
 .nav-links a.nav-paper { color: var(--accent); font-weight: 600; }
+.nav-links a.is-active { background: var(--bg-soft); color: var(--text); }
 
 .theme-toggle, .nav-toggle {
   border: 1px solid var(--border);
@@ -183,10 +186,11 @@ img { max-width: 100%; height: auto; }
 
 .content h2 {
   font-family: var(--serif);
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   font-weight: 600;
-  letter-spacing: -.008em;
-  margin: 3.2rem 0 1rem;
+  letter-spacing: -.012em;
+  line-height: 1.3;
+  margin: 4.2rem 0 1rem;
   padding-bottom: .45rem;
   border-bottom: 1px solid var(--border-strong);
   display: grid;
@@ -211,6 +215,15 @@ img { max-width: 100%; height: auto; }
 }
 
 .content p { margin: 0 0 1rem; }
+
+/* One-sentence takeaway under each section heading. */
+.content .lead {
+  margin: 0 0 1.5rem;
+  max-width: 50rem;
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: var(--text);
+}
 .content ul, .content ol { padding-left: 1.3rem; margin: 0 0 1rem; }
 .content li { margin-bottom: .35rem; }
 
@@ -442,28 +455,69 @@ html[data-theme="dark"] .def--key { background: var(--bg-soft); }
   color: var(--text-faint);
 }
 
-.diffs { counter-reset: diff; list-style: none; margin: 0 !important; padding: 0 !important; }
-.diffs > li {
+.diff-cards {
+  display: grid;
+  gap: .8rem;
+  counter-reset: diff;
+  list-style: none;
+  margin: 0 0 1.4rem !important;
+  padding: 0 !important;
+}
+.diff-cards--core { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.diff-cards--more { grid-template-columns: repeat(4, minmax(0, 1fr)); counter-reset: diff 3; }
+.diff-cards > li {
   counter-increment: diff;
-  position: relative;
-  padding: .15rem 0 .85rem 2.3rem;
   margin: 0;
-  font-size: .95rem;
-  line-height: 1.6;
+  padding: .9rem 1rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-soft);
+  font-size: .9rem;
+  line-height: 1.55;
   color: var(--text-muted);
 }
-.diffs > li::before {
+.diff-cards--core > li { border-top: 3px solid var(--accent); }
+.diff-cards--plain > li { border-top: 1px solid var(--border); }
+.diff-cards > li::before {
   content: counter(diff, decimal-leading-zero);
-  position: absolute;
-  left: 0;
-  top: .38rem;
+  display: block;
+  margin-bottom: .2rem;
   font-family: var(--sans);
   font-size: .72rem;
   font-weight: 700;
   color: var(--accent);
   font-variant-numeric: tabular-nums;
 }
-.diffs b { display: block; color: var(--text); font-weight: 600; }
+.diff-cards b { display: block; margin-bottom: .25rem; color: var(--text); font-size: 1rem; font-weight: 600; line-height: 1.35; }
+.diff-cards--core:not(.diff-cards--plain) b { font-size: 1.06rem; }
+
+/* ------------------------------------------------------------------- terms */
+
+.terms {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin: 0 0 1.4rem;
+}
+.terms > div { border-top: 1px solid var(--border-strong); padding-top: .6rem; }
+.terms dt { font-weight: 600; margin-bottom: .2rem; }
+.terms dd { margin: 0; font-size: .9rem; line-height: 1.55; color: var(--text-muted); }
+
+/* ----------------------------------------------------------- tc chart */
+
+.figure__frame--plain { background: var(--bg-soft); }
+.tc-chart { display: block; width: 100%; max-width: 620px; margin: 0 auto; }
+.tc-chart text { font-family: var(--sans); font-size: 13px; fill: var(--text-muted); }
+.tc-chart .axis { stroke: var(--text-faint); stroke-width: 1.2; }
+.tc-chart .guide { stroke: var(--text-faint); stroke-width: 1; stroke-dasharray: 4 4; }
+.tc-chart .curve-a, .tc-chart .curve-b { fill: none; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.tc-chart .curve-a { stroke: var(--accent); }
+.tc-chart .curve-b { stroke: var(--series-b); }
+.tc-chart .dot-a { fill: var(--accent); }
+.tc-chart .dot-b { fill: var(--series-b); }
+.tc-chart .lab-a { fill: var(--accent); font-weight: 600; }
+.tc-chart .lab-b { fill: var(--series-b); font-weight: 600; }
+.tc-chart .pstar { font-style: italic; fill: var(--text); }
 
 .compare { margin: 1rem 0; }
 .compare summary {
@@ -618,6 +672,13 @@ a.card:hover h3 { color: var(--accent); }
 /* ------------------------------------------------------------- read list */
 
 .reading section { margin-bottom: 1.6rem; }
+.reading--cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .4rem 2.4rem;
+  align-items: start;
+}
+.reading--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .reading h3 {
   margin: 0 0 .4rem;
   font-family: var(--sans);
@@ -673,8 +734,16 @@ a.card:hover h3 { color: var(--accent); }
 
 /* ------------------------------------------------------------- responsive */
 
+@media (max-width: 960px) {
+  .diff-cards--more, .terms { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .reading--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
 @media (max-width: 760px) {
-  .def-grid, .pillars, .card-grid--3 { grid-template-columns: minmax(0, 1fr); }
+  .def-grid, .pillars, .card-grid--3, .diff-cards--core, .diff-cards--more,
+  .terms, .reading--cols, .reading--3 { grid-template-columns: minmax(0, 1fr); }
+  .content h2 { font-size: 1.4rem; margin-top: 3.2rem; }
+  .content .lead { font-size: 1.08rem; }
 }
 
 @media (max-width: 680px) {
